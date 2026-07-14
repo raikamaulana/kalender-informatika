@@ -1,11 +1,114 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <meta charset="utf-8">
+    <title>Kalender Informatika - HIMTIKA - Himpunan Mahasiswa Informatika Unsika</title>
+
+    <meta name="description" content="Pantau seluruh event HIMTIKA, Informatika, dan Fakultas Ilmu Komputer UNSIKA secara terstruktur dan terupdate." />
+    <meta name="keywords" content="HIMTIKA, Himpunan Mahasiswa Informatika, UNSIKA, Informatika" />
+
+    <!-- Stylesheets -->
+    <link href="assets/css/output.css" rel="stylesheet">
+    <link href="assets/css/style.css" rel="stylesheet">
+    <link href="assets/css/responsive.css" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="shortcut icon" href="assets/images/logo/HIMTIKA.webp" type="image/x-icon">
+    <link rel="icon" href="assets/images/logo/HIMTIKA.webp" type="image/x-icon"/>
+    
+    <!-- Responsive -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
 </head>
 <body>
-    
+    <main>
+        <!-- START HERO SECTION -->
+        <section id="hero-section" style="background-image: url('assets/images/bg/bg-hero-pc.png');" class="hero-section margin-x-section relative w-full flex items-center pt-10 md:pt-17 lg:pt-10 overflow-hidden bg-no-repeat bg-cover bg-center min-h-dvh font-montserrat">
+            <div style="background-image: url('assets/images/bg/bg-hero-mobile.png');" class="bg-mobile-swap"></div>
+            <div class="relative z-10 w-full grid grid-cols-1 lg:grid-cols-2 items-center">
+                <div class="flex flex-col items-center text-center lg:items-start lg:text-left">
+                    <span class="flex gap-1 md:gap-2 items-center justify-center px-3 py-1.5 xl:px-5 xl:py-2 w-fit border border-mainGold rounded-3xl font-semibold text-mainGold bg-linear-to-r from-darkGreen to-primary badge-glow">
+                        <svg class="w-4 h-4 xl:w-5 xl:h-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><title xmlns="">calendar</title><g fill="currentColor" fill-rule="evenodd" clip-rule="evenodd"><path d="M15 23a2 2 0 0 0-2 2v2a2 2 0 0 0 2 2h2a2 2 0 0 0 2-2v-2a2 2 0 0 0-2-2zm0 2v2h2v-2zm6 0a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v2a2 2 0 0 1-2 2h-2a2 2 0 0 1-2-2zm2 0h2v2h-2zm8-2a2 2 0 0 0-2 2v2a2 2 0 0 0 2 2h2a2 2 0 0 0 2-2v-2a2 2 0 0 0-2-2zm0 2v2h2v-2zm-18 8a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v2a2 2 0 0 1-2 2h-2a2 2 0 0 1-2-2zm2 2v-2h2v2zm8-4a2 2 0 0 0-2 2v2a2 2 0 0 0 2 2h2a2 2 0 0 0 2-2v-2a2 2 0 0 0-2-2zm2 2h-2v2h2zm4 0a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v2a2 2 0 0 1-2 2h-2a2 2 0 0 1-2-2zm2 2v-2h2v2z"/><path d="M16 6a1 1 0 0 0-1 1v3h-4a4 4 0 0 0-4 4v24a4 4 0 0 0 4 4h26a4 4 0 0 0 4-4V14a4 4 0 0 0-4-4h-2v3a1 1 0 1 1-2 0V7a1 1 0 1 0-2 0v3H19v3a1 1 0 1 1-2 0V7a1 1 0 0 0-1-1M9 38V21h30v17a2 2 0 0 1-2 2H11a2 2 0 0 1-2-2"/></g></svg>
+                        <h1 class="text-[11px] sm:text-xs xl:text-sm leading-none lg:mt-0.5 noselect">KALENDER HIMTIKA</h1>
+                    </span>
+                    <h2 class="text-[26px] sm:text-3xl lg:text-4xl xl:text-[40px] 2xl:text-6xl text-white font-semibold mt-5 leading-tight title-text-shadow">
+                        Temukan Agenda dan <span class="text-mainGold">Kegiatan HIMTIKA</span> Dalam Satu Tempat
+                    </h2>
+                    <p class="w-[90%] lg:w-full mx-auto text-xs sm:text-sm lg:text-base 2xl:text-lg text-white title-text-shadow-2 mt-5 md:mt-7 font-inter">
+                        Pantau seluruh agenda HIMTIKA, Prodi Informatika, dan Fakultas Ilmu Komputer secara terstruktur.
+                    </p>
+                    <div class="flex justify-center mt-7 lg:hidden">
+                        <img src="assets/images/graphic/calender-graphic.png" alt="Grand Design HIMTIKA" class="w-50 graphic-shadow floating">
+                    </div>
+                    <div class="hero-btn-group noselect">
+                        <button class="btnleft btnhero-1">
+                            <span>
+                                Lihat Kalender
+                            </span>
+                            <svg viewBox="0 0 19 19" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M10 4L10 12.25L13.25 9L14 9.66L9.5 14.16L5 9.66L5.75 9L9 12.25L9 4H10ZM9.5 19C4.26 19 0 14.75 0 9.5C0 6.98044 1.00089 4.56408 2.78249 2.78249C4.56408 1.00089 6.98044 0 9.5 0C12.0196 0 14.4359 1.00089 16.2175 2.78249C17.9991 4.56408 19 6.98044 19 9.5C19 12.0196 17.9991 14.4359 16.2175 16.2175C14.4359 17.9991 12.0196 19 9.5 19ZM9.5 18C10.6162 18 11.7215 17.7801 12.7528 17.353C13.7841 16.9258 14.7211 16.2997 15.5104 15.5104C16.2997 14.7211 16.9258 13.7841 17.353 12.7528C17.7801 11.7215 18 10.6162 18 9.5C18 7.24566 17.1045 5.08365 15.5104 3.48959C13.9163 1.89553 11.7543 1 9.5 1C7.24566 1 5.08365 1.89553 3.48959 3.48959C1.89553 5.08365 1 7.24566 1 9.5C1 11.7543 1.89553 13.9163 3.48959 15.5104C5.08365 17.1045 7.24566 18 9.5 18Z" />
+                            </svg>
+                        </button>
+                        <button class="btnhero-2">
+                            Agenda Terdekat
+                        </button>
+                    </div>
+                </div>
+                <div class="hidden lg:flex lg:justify-end xl:justify-center">
+                    <img src="assets/images/graphic/calender-graphic.png" alt="Grand Design HIMTIKA" class="lg:w-[70%] xl:w-[65%] 2xl:w-[75%] graphic-shadow floating">
+                </div>
+            </div>
+        </section>
+        <!-- END HERO SECTION -->
+
+        <!-- START AGENDA TERDEKAT SECTION -->
+        <section id="agenda-terdekat-section">
+
+        </section>
+        <!-- END AGENDA TERDEKAT SECTION -->
+        
+        <!-- START KALENDER SECTION -->
+        <section id="kalender-section">
+
+        </section>
+        <!-- END KALENDER SECTION -->
+        
+        <!-- START PUBLIKASI SECTION -->
+        <section id="publikasi-section" class="publikasi-section margin-x-section relative font-montserrat bg-primaryBackground py-20 transition-all duration-500">
+            <img src="assets/images/graphic/circle-pattern.svg" alt="half-circle-pattern-hero-top" class="absolute top-0 right-0 w-50">
+            <div class="rounded-2xl border border-gray-500 flex flex-col lg:flex-row relative overflow-hidden">
+                
+                <div class="relative w-full lg:w-auto lg:flex-4 min-h-30 md:min-h-40 lg:min-h-full">
+                    <div class="z-10 absolute top-5 left-5 lg:top-8 lg:left-8 p-2 lg:p-2.5 bg-linear-to-br from-mainGold/80 to-darkGold/80 backdrop-blur-xs rounded-xl lg:rounded-2xl border-2 border-mainGold text-white">
+                        <svg class="w-6 h-6 md:w-8 md:h-8" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                            <path fill="currentColor" d="M7.5 10.5h-1a1 1 0 0 0 0 2h1a1 1 0 0 0 0-2m5 0h-1a1 1 0 0 0 0 2h1a1 1 0 0 0 0-2m5 0h-1a1 1 0 0 0 0 2h1a1 1 0 0 0 0-2m-10 4h-1a1 1 0 0 0 0 2h1a1 1 0 0 0 0-2m5 0h-1a1 1 0 0 0 0 2h1a1 1 0 0 0 0-2m5 0h-1a1 1 0 0 0 0 2h1a1 1 0 0 0 0-2m-10 4h-1a1 1 0 0 0 0 2h1a1 1 0 0 0 0-2m5 0h-1a1 1 0 0 0 0 2h1a1 1 0 0 0 0-2m5 0h-1a1 1 0 0 0 0 2h1a1 1 0 0 0 0-2"/><path fill="currentColor" d="M21.5 3h-2.75a.25.25 0 0 1-.25-.25V1a1 1 0 0 0-2 0v4.75a.75.75 0 0 1-1.5 0V3.5a.5.5 0 0 0-.5-.5H8.25A.25.25 0 0 1 8 2.75V1a1 1 0 0 0-2 0v4.75a.75.75 0 0 1-1.5 0V3.5A.5.5 0 0 0 4 3H2.5a2 2 0 0 0-2 2v17a2 2 0 0 0 2 2h19a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2m0 18.5a.5.5 0 0 1-.5.5H3a.5.5 0 0 1-.5-.5v-12A.5.5 0 0 1 3 9h18a.5.5 0 0 1 .5.5Z"/>
+                        </svg>
+                    </div>
+                    <img 
+                        src="assets/images/bg/bg-publikasi.webp" 
+                        alt="Event Image" 
+                        class="absolute inset-0 w-full h-full object-cover object-center noselect"
+                    />
+                    <div class="absolute inset-0 bg-linear-to-b lg:bg-linear-to-r from-[#1e3c39]/80 sm:from-transparent via-[#1e3c39]/5 lg:via-[#1e3c39]/20 to-[#1e3c39]"></div>
+                </div>
+
+                <div class="w-full lg:w-auto lg:flex-6 py-5.5 lg:py-9 px-5.5 lg:pr-12 relative z-10 bg-green-200/5 backdrop-blur-[3px]">
+                    <h2 class="text-[11px] sm:text-xs md:text-sm lg:text-base text-mainGold font-semibold tracking-wider">TANGGAL EVENT?</h2>
+                    <h3 class="text-[17px] sm:text-lg lg:text-2xl leading-tight text-white font-semibold mt-1">Ingin Mempublikasikan Tanggal Event di Kalender HIMTIKA?</h3>
+                    <p class="text-[11px] sm:text-xs lg:text-sm text-white mt-4 lg:mt-5">Sampaikan informasi tanggal event yang akan diselenggarakan. Informasi tersebut akan kami tampilkan di kalender HIMTIKA agar lebih banyak mahasiswa yang tahu.</p>
+                    <a href="https://himtika.cs.unsika.ac.id/kontak-kami" class="btnleft noselect mt-5 sm:mt-6 w-fit btn-publikasi">
+                        <span>
+                            Hubungi Kami 
+                        </span>
+                        <svg viewBox="0 0 19 19" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M10 4L10 12.25L13.25 9L14 9.66L9.5 14.16L5 9.66L5.75 9L9 12.25L9 4H10ZM9.5 19C4.26 19 0 14.75 0 9.5C0 6.98044 1.00089 4.56408 2.78249 2.78249C4.56408 1.00089 6.98044 0 9.5 0C12.0196 0 14.4359 1.00089 16.2175 2.78249C17.9991 4.56408 19 6.98044 19 9.5C19 12.0196 17.9991 14.4359 16.2175 16.2175C14.4359 17.9991 12.0196 19 9.5 19ZM9.5 18C10.6162 18 11.7215 17.7801 12.7528 17.353C13.7841 16.9258 14.7211 16.2997 15.5104 15.5104C16.2997 14.7211 16.9258 13.7841 17.353 12.7528C17.7801 11.7215 18 10.6162 18 9.5C18 7.24566 17.1045 5.08365 15.5104 3.48959C13.9163 1.89553 11.7543 1 9.5 1C7.24566 1 5.08365 1.89553 3.48959 3.48959C1.89553 5.08365 1 7.24566 1 9.5C1 11.7543 1.89553 13.9163 3.48959 15.5104C5.08365 17.1045 7.24566 18 9.5 18Z" />
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </section>
+        <!-- END PUBLIKASI SECTION -->
+        
+    </main>
 </body>
 </html>
