@@ -94,7 +94,7 @@ const calendarEvents = Object.freeze([
     organizer: "HIMTIKA UNSIKA",
     location: "Aula Syekh Quro",
     description: "Latihan Kepemimpinan dan Manajemen Mahasiswa untuk mahasiswa baru Informatika 2026",
-    image: "",
+    image: "./assets/images/events/bg-semantik.webp",
     link: "https://www.instagram.com/himtika_unsika/",
     featured: false
   },

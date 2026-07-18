@@ -590,8 +590,10 @@
     .fc-custom-event {
         display: grid;
         min-width: 0;
-        gap: 1px;
-        padding: 5px 6px;
+        /* gap: 1px; */
+        gap: 0px;
+        /* padding: 5px 6px; */
+        padding: 1px 6px;
         color: #fff;
         cursor: pointer;
     }
@@ -728,9 +730,6 @@
     /* END HERO SECTION */
 
     /* START KALENDER SECTION */
-    .section-eyebrow {
-        font-size: 14px;
-    }
     .carousel-button {
         width: 42px;
         height: 42px;
@@ -768,9 +767,6 @@
     }
     .agenda-panel__heading {
         margin-bottom: 20px;
-    }
-    .agenda-panel h3 {
-        font-size: 22px;
     }
     .calendar-current-title {
         font-size: 20px;
@@ -1009,8 +1005,14 @@
     #calendar .fc-daygrid-day-frame {
         min-height: 138px;
     }
+    .section-eyebrow {
+        font-size: 14px;
+    }
     .event-dialog h2 {
         font-size: 26px;
+    }
+    .agenda-panel h3 {
+        font-size: 22px;
     }
     /* END KALENDER SECTION */
 
