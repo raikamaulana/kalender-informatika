@@ -45,7 +45,7 @@
     elements.upcomingNext = document.getElementById("upcomingNext");
 
     elements.agendaPanelTitle = document.getElementById("agenda-panel-title");
-    elements.agendaPanelRange = document.getElementById("agendaPanelRange");
+    // elements.agendaPanelRange = document.getElementById("agendaPanelRange");
     elements.agendaPanelList = document.getElementById("agendaPanelList");
     elements.agendaPanelEmpty = document.getElementById("agendaPanelEmpty");
 
@@ -403,7 +403,7 @@
     state.activeRangeStart = weekStart;
     state.activeRangeEnd = weekEnd;
     elements.agendaPanelTitle.textContent = "Agenda Minggu Ini";
-    elements.agendaPanelRange.textContent = formatDateRange(weekStart, addDays(weekEnd, -1));
+    // elements.agendaPanelRange.textContent = formatDateRange(weekStart, addDays(weekEnd, -1));
 
     const events = getEventsInRange(weekStart, weekEnd);
     renderAgendaPanelItems(events);
@@ -416,7 +416,7 @@
     state.activeRangeStart = dayStart;
     state.activeRangeEnd = dayEnd;
     elements.agendaPanelTitle.textContent = formatWeekdayDate(date);
-    elements.agendaPanelRange.textContent = formatDate(date);
+    // elements.agendaPanelRange.textContent = formatDate(date);
 
     const events = getEventsInRange(dayStart, dayEnd);
     renderAgendaPanelItems(events);
