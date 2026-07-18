@@ -8,107 +8,488 @@
     <meta name="keywords" content="HIMTIKA, Himpunan Mahasiswa Informatika, UNSIKA, Informatika" />
 
     <!-- Stylesheets -->
-    <link href="assets/css/output.css" rel="stylesheet">
     <link href="assets/css/style.css" rel="stylesheet">
     <link href="assets/css/responsive.css" rel="stylesheet">
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="shortcut icon" href="assets/images/logo/HIMTIKA.webp" type="image/x-icon">
     <link rel="icon" href="assets/images/logo/HIMTIKA.webp" type="image/x-icon"/>
+
+    <!-- FullCalendar v6 dipin agar API dan tampilan tidak berubah tiba-tiba. -->
+    <script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.19/index.global.min.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/@fullcalendar/core@6.1.19/locales-all.global.min.js" defer></script>
     
     <!-- Responsive -->
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
 </head>
 <body>
-    <main>
-        <!-- START HERO SECTION -->
-        <section id="hero-section" style="background-image: url('assets/images/bg/bg-hero-pc.png');" class="hero-section margin-x-section relative w-full flex items-center pt-10 md:pt-17 lg:pt-10 overflow-hidden bg-no-repeat bg-cover bg-center min-h-dvh font-montserrat">
-            <div style="background-image: url('assets/images/bg/bg-hero-mobile.png');" class="bg-mobile-swap"></div>
-            <div class="relative z-10 w-full grid grid-cols-1 lg:grid-cols-2 items-center">
-                <div class="flex flex-col items-center text-center lg:items-start lg:text-left">
-                    <span class="flex gap-1 md:gap-2 items-center justify-center px-3 py-1.5 xl:px-5 xl:py-2 w-fit border border-mainGold rounded-3xl font-semibold text-mainGold bg-linear-to-r from-darkGreen to-primary badge-glow">
-                        <svg class="w-4 h-4 xl:w-5 xl:h-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><title xmlns="">calendar</title><g fill="currentColor" fill-rule="evenodd" clip-rule="evenodd"><path d="M15 23a2 2 0 0 0-2 2v2a2 2 0 0 0 2 2h2a2 2 0 0 0 2-2v-2a2 2 0 0 0-2-2zm0 2v2h2v-2zm6 0a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v2a2 2 0 0 1-2 2h-2a2 2 0 0 1-2-2zm2 0h2v2h-2zm8-2a2 2 0 0 0-2 2v2a2 2 0 0 0 2 2h2a2 2 0 0 0 2-2v-2a2 2 0 0 0-2-2zm0 2v2h2v-2zm-18 8a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v2a2 2 0 0 1-2 2h-2a2 2 0 0 1-2-2zm2 2v-2h2v2zm8-4a2 2 0 0 0-2 2v2a2 2 0 0 0 2 2h2a2 2 0 0 0 2-2v-2a2 2 0 0 0-2-2zm2 2h-2v2h2zm4 0a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v2a2 2 0 0 1-2 2h-2a2 2 0 0 1-2-2zm2 2v-2h2v2z"/><path d="M16 6a1 1 0 0 0-1 1v3h-4a4 4 0 0 0-4 4v24a4 4 0 0 0 4 4h26a4 4 0 0 0 4-4V14a4 4 0 0 0-4-4h-2v3a1 1 0 1 1-2 0V7a1 1 0 1 0-2 0v3H19v3a1 1 0 1 1-2 0V7a1 1 0 0 0-1-1M9 38V21h30v17a2 2 0 0 1-2 2H11a2 2 0 0 1-2-2"/></g></svg>
-                        <h1 class="text-[11px] sm:text-xs xl:text-sm leading-none lg:mt-0.5 noselect">KALENDER HIMTIKA</h1>
-                    </span>
-                    <h2 class="text-[26px] sm:text-3xl lg:text-4xl xl:text-[40px] 2xl:text-6xl text-white font-semibold mt-5 leading-tight title-text-shadow">
-                        Temukan Agenda dan <span class="text-mainGold">Kegiatan HIMTIKA</span> Dalam Satu Tempat
-                    </h2>
-                    <p class="w-[90%] lg:w-full mx-auto text-xs sm:text-sm lg:text-base 2xl:text-lg text-white title-text-shadow-2 mt-5 md:mt-7 font-inter">
-                        Pantau seluruh agenda HIMTIKA, Prodi Informatika, dan Fakultas Ilmu Komputer secara terstruktur.
-                    </p>
-                    <div class="flex justify-center mt-7 lg:hidden">
-                        <img src="assets/images/graphic/calender-graphic.png" alt="Grand Design HIMTIKA" class="w-50 graphic-shadow floating">
+    <div class="page-wrapper">
+        <!-- START PRELOADER -->
+        <div class="preloader">
+            <div class="icon"></div>
+            <div class="other-icon"></div>
+        </div>
+        <!-- END PRELOADER -->
+    
+        <!-- START HEADER -->
+        <header class="main-header header-absolute" id="main-header">
+            <!-- Header Top -->
+            <div class="header-top">
+                <!-- Start Live News -->
+                <div class="live-news top">
+                    <div class="auto-container clearfix">
+                        <div class="rectangle">
+                            <span class="kabinet-selaras">KABINET SELARAS</span>
+                            <img class="rectangle-img" src="assets/images/graphic/main-rectangle.svg" alt="Rectangle">
+                            <img class="rectangle-shadow" src="assets/images/graphic/shadow-rectangle.svg"
+                                alt="Shadow Rectangle"></img>
+                            <img class="selaras" src="assets/images/logo/selaras.webp" alt="Selaras">
+                        </div>
+                        <div class="marquee">
+                            <span>Nantikan berbagai <a href="https://www.instagram.com/himtika_unsika/"
+                                    target="_blank">Events</a> seru HIMTIKA dengan selalu mengikuti akun media sosial
+                                dan website kami!</span>
+                        </div>
                     </div>
-                    <div class="hero-btn-group noselect">
-                        <button class="btnleft btnhero-1">
+                </div>
+                <!-- End Live News -->
+            </div>
+    
+            <!-- Header Upper -->
+            <div class="header-upper">
+                <div class="inner-container">
+                    <div class="auto-container clearfix">
+                        <!--Nav Box-->
+                        <div class="nav-outer clearfix">
+                            <div class="logo-outer">
+                                <a href="/">
+                                    <img src="assets/images/logo/himtika-header.svg" alt="Logo Himtika"
+                                        title="HIMTIKA">
+                                </a>
+                            </div>
+                            <!--Mobile Navigation Toggler-->
+                            <div class="mobile-nav-toggler"><span class="icon fas fa-bars"></span></div>
+    
+                            <!-- Main Menu -->
+                            <nav class="main-menu navbar-expand-md navbar-light">
+                                <div class="collapse navbar-collapse show clearfix" id="navbarSupportedContent">
+                                    <ul class="navigation clearfix pull-left">
+                                        <li class="dropdown">
+                                            <a href="#">Tentang Kami<i
+                                                    class="fas fa-chevron-down arrow"></i></a>
+                                            <ul>
+                                                <li>
+                                                    <a href="https://himtika.cs.unsika.ac.id/sejarah-himtika/">Sejarah</a>
+                                                </li>
+                                                <li>
+                                                    <a href="https://himtika.cs.unsika.ac.id/logo-himtika/">Logo</a>
+                                                </li>
+                                                <li>
+                                                    <a href="https://himtika.cs.unsika.ac.id/visi-misi/">Visi Misi</a>
+                                                </li>
+                                                <li>
+                                                    <a href="https://himtika.cs.unsika.ac.id/struktur-organisasi/">Struktur Organisasi</a>
+                                                </li>
+                                                <li>
+                                                    <a href="https://himtika.cs.unsika.ac.id/grand-design-himtika">Grand Design HIMTIKA</a>
+                                                </li>
+                                                <li>
+                                                    <a href="https://himtika.cs.unsika.ac.id/galeri-himtika/">Galeri HIMTIKA</a>
+                                                </li>
+                                                <li>
+                                                    <a href="https://himtika.cs.unsika.ac.id/kontak-kami/">Kontak Kami</a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li class="dropdown">
+                                            <a href="#">Agenda<i class="fas fa-chevron-down arrow"></i></a>
+                                            <ul class="sub_menu">
+                                                <li><a href="https://himtika.cs.unsika.ac.id/himtika-awards/">Himtika Awards</a></li>
+                                                <li><a href="https://www.instagram.com/himtika_unsika/" target="_blank">Berita</a></li>
+                                                <li><a href="https://himtika.cs.unsika.ac.id/hikode/">Artikel HIMTIKA</a></li>
+                                                <li><a href="https://www.instagram.com/cnc_himtika/" target="_blank">Info Lomba</a></li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+    
+                                    <ul class="navigation pull-right clearfix">
+                                        <li class="dropdown"><a href="#">Events<i
+                                                    class="fas fa-chevron-down arrow"></i></a>
+                                            <ul class="sub_menu">
+                                                <li><a href="https://himtika.cs.unsika.ac.id/open-project/" target="_blank">Create and Compete</a></li>
+                                                <li><a href="https://himtika.cs.unsika.ac.id/hi-link/" target="_blank">Hi-Link: HE</a></li>
+                                                <li><a href="https://himtika.cs.unsika.ac.id/hi-link/" target="_blank">Hi-Link: HGTC</a></li>
+                                                <li><a href="https://himtika.cs.unsika.ac.id/studyclub/" target="_blank">Study Club</a></li>
+                                                <li><a href="https://himtika.cs.unsika.ac.id/pekan-it/" target="_blank">Pekan IT: NIC</a></li>
+                                                <li><a href="https://himtika.cs.unsika.ac.id/pekan-it/detail-semantik/" target="_blank">Pekan IT: Semantik IC</a></li>
+                                                <li><a href="https://himtika.cs.unsika.ac.id/lkmmpd/" target="_blank">LKMM-PD</a></li>
+                                                <li><a href="https://himtika.cs.unsika.ac.id/diesnatalis/" target="_blank">Diesnatalis</a></li>
+                                                <li><a href="https://himtika.cs.unsika.ac.id/it-bootcamp/" target="_blank">IT Bootcamp</a></li>
+                                            </ul>
+                                        </li>
+                                        <li class="dropdown"><a href="#">Aplikasi Publik<i
+                                                    class="fas fa-chevron-down arrow"></i></a>
+                                            <ul class="sub_menu">
+                                                <li><a href="https://himtalks.vercel.app/himtalks">Himtalks</a></li>
+                                                <li><a href="https://himtika.cs.unsika.ac.id/kalender/">Kalender</a></li>
+                                                <li><a href="https://himtika.cs.unsika.ac.id/media-partner/">Media Partner</a></li>
+                                                <li><a href="https://himtika.cs.unsika.ac.id/corporation/">Corporation</a></li>
+                                                <li><a href="https://himtika.cs.unsika.ac.id/dosen/">Tenaga Pendidik</a></li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </nav>
+                            <!-- Main Menu End-->
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--End Header Upper-->
+    
+            <!-- Mobile Menu  -->
+            <div class="mobile-menu">
+                <div class="menu-backdrop"></div>
+                <div class="close-btn"><span class="icon fas fa-times" style="font-size: 28px;"></span></div>
+    
+                <nav class="menu-box">
+                    <div class="nav-logo"><a href="index.html"><img width="120" height="120" src="assets/images/logo/HIMTIKA.webp" alt="Logo HIMTIKA"
+                                title=""></a></div>
+                    <div class="menu-outer"></div>
+                    <!--Social Links-->
+                    <div class="social-links">
+                        <ul class="clearfix">
+                            <li>
+                                <a href="https://www.instagram.com/himtika_unsika/" target="_blank"><i
+                                        class="fab fa-instagram"></i></a>
+                                <a href="https://www.linkedin.com/company/himtika/" target="_blank"><i
+                                        class="fab fa-linkedin"></i></a>
+                                <a href="https://www.youtube.com/@himtikaofficial4428" target="_blank"><i
+                                        class="fab fa-youtube"></i></a>
+                                <a href="https://www.tiktok.com/@himtika_unsika" target="_blank"><i
+                                        class="fab fa-tiktok"></i></a>
+                                <a href="https://mail.google.com/mail/?view=cm&fs=1&to=himtika@unsika.ac.id" target="_blank"><i
+                                        class="fa-regular fa-envelope"></i></a>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+            <!-- End Mobile Menu -->
+        </header>
+        <!-- END HEADER -->
+    
+        <main>
+            <!-- START HERO SECTION -->
+            <section id="hero-section" style="background-image: url('assets/images/bg/bg-hero-pc.webp');" class="hero-section margin-x-section">
+                <div style="background-image: url('assets/images/bg/bg-hero-mobile.webp');" class="bg-mobile-swap"></div>
+                <div class="hero-container">
+                    <div class="hero-content">
+                        <span class="hero-badge badge-glow">
+                            <svg class="hero-badge-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><title xmlns="">calendar</title><g fill="currentColor" fill-rule="evenodd" clip-rule="evenodd"><path d="M15 23a2 2 0 0 0-2 2v2a2 2 0 0 0 2 2h2a2 2 0 0 0 2-2v-2a2 2 0 0 0-2-2zm0 2v2h2v-2zm6 0a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v2a2 2 0 0 1-2 2h-2a2 2 0 0 1-2-2zm2 0h2v2h-2zm8-2a2 2 0 0 0-2 2v2a2 2 0 0 0 2 2h2a2 2 0 0 0 2-2v-2a2 2 0 0 0-2-2zm0 2v2h2v-2zm-18 8a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v2a2 2 0 0 1-2 2h-2a2 2 0 0 1-2-2zm2 2v-2h2v2zm8-4a2 2 0 0 0-2 2v2a2 2 0 0 0 2 2h2a2 2 0 0 0 2-2v-2a2 2 0 0 0-2-2zm2 2h-2v2h2zm4 0a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v2a2 2 0 0 1-2 2h-2a2 2 0 0 1-2-2zm2 2v-2h2v2z"/><path d="M16 6a1 1 0 0 0-1 1v3h-4a4 4 0 0 0-4 4v24a4 4 0 0 0 4 4h26a4 4 0 0 0 4-4V14a4 4 0 0 0-4-4h-2v3a1 1 0 1 1-2 0V7a1 1 0 1 0-2 0v3H19v3a1 1 0 1 1-2 0V7a1 1 0 0 0-1-1M9 38V21h30v17a2 2 0 0 1-2 2H11a2 2 0 0 1-2-2"/></g></svg>
+                            <h1 class="hero-badge-title noselect">KALENDER INFORMATIKA</h1>
+                        </span>
+                        <h2 class="hero-title title-text-shadow">
+                            Temukan Agenda dan <span>Kegiatan Informatika</span> Dalam Satu Tempat
+                        </h2>
+                        <p class="hero-description title-text-shadow-2">
+                            Pantau seluruh agenda HIMTIKA, Prodi Informatika, dan Fakultas Ilmu Komputer secara terstruktur.
+                        </p>
+                        <div class="hero-mobile-graphic-wrapper">
+                            <img src="assets/images/graphic/calender-graphic.webp" alt="Grand Design HIMTIKA" class="hero-mobile-graphic graphic-shadow floating">
+                        </div>
+                        <div class="hero-btn-group noselect">
+                            <button id="seeCalenderBtn" class="btnleft btnhero-1">
+                                <span>
+                                    Lihat Kalender
+                                </span>
+                                <svg viewBox="0 0 19 19" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M10 4L10 12.25L13.25 9L14 9.66L9.5 14.16L5 9.66L5.75 9L9 12.25L9 4H10ZM9.5 19C4.26 19 0 14.75 0 9.5C0 6.98044 1.00089 4.56408 2.78249 2.78249C4.56408 1.00089 6.98044 0 9.5 0C12.0196 0 14.4359 1.00089 16.2175 2.78249C17.9991 4.56408 19 6.98044 19 9.5C19 12.0196 17.9991 14.4359 16.2175 16.2175C14.4359 17.9991 12.0196 19 9.5 19ZM9.5 18C10.6162 18 11.7215 17.7801 12.7528 17.353C13.7841 16.9258 14.7211 16.2997 15.5104 15.5104C16.2997 14.7211 16.9258 13.7841 17.353 12.7528C17.7801 11.7215 18 10.6162 18 9.5C18 7.24566 17.1045 5.08365 15.5104 3.48959C13.9163 1.89553 11.7543 1 9.5 1C7.24566 1 5.08365 1.89553 3.48959 3.48959C1.89553 5.08365 1 7.24566 1 9.5C1 11.7543 1.89553 13.9163 3.48959 15.5104C5.08365 17.1045 7.24566 18 9.5 18Z" />
+                                </svg>
+                            </button>
+                            <button id="seeUpcomingBtn" class="btnhero-2">
+                                Agenda Terdekat
+                            </button>
+                        </div>
+                    </div>
+                    <div class="hero-desktop-graphic-wrapper">
+                        <img src="assets/images/graphic/calender-graphic.webp" alt="Grand Design HIMTIKA" class="hero-desktop-graphic graphic-shadow floating">
+                    </div>
+                </div>
+            </section>
+            <!-- END HERO SECTION -->
+    
+            <!-- START AGENDA TERDEKAT SECTION -->
+            <section id="agenda-terdekat-section" class="upcoming-section margin-x-section" aria-labelledby="upcoming-title">
+                <div class="section-heading section-heading--row">
+                    <div>
+                        <p class="section-eyebrow">AGENDA TERDEKAT</p>
+                        <h2 id="upcoming-title">Agenda yang Akan Datang</h2>
+                    </div>
+                    <button id="seeAllAgendaBtn" class="section-link">
+                        <span>Lihat Semua Agenda</span> 
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </button>
+                </div>
+    
+                <div class="upcoming-carousel-shell">
+                    <button class="carousel-button carousel-button--previous" id="upcomingPrevious" type="button" aria-label="Agenda sebelumnya">
+                        <i class="fa-solid fa-angle-left"></i>
+                    </button>
+    
+                    <div id="upcomingEvents" class="upcoming-events" aria-live="polite"></div>
+    
+                    <button class="carousel-button carousel-button--next" id="upcomingNext" type="button" aria-label="Agenda berikutnya">
+                        <i class="fa-solid fa-angle-right"></i>
+                    </button>
+                </div>
+    
+                <button id="seeAllAgendaBtn2" class="section-link-mobile">
+                    <span>Lihat Semua Agenda</span> 
+                    <i class="fa-solid fa-arrow-right"></i>
+                </button>
+    
+                <p id="upcomingEmpty" class="empty-state" hidden>Belum ada agenda mendatang yang dipublikasikan.</p>
+            </section>
+            <!-- END AGENDA TERDEKAT SECTION -->
+    
+            <!-- START KALENDER SECTION -->
+            <section id="kalender-section" class="calendar-section margin-x-section" aria-labelledby="calendar-section-title">
+                <div class="section-heading">
+                    <p class="section-eyebrow">KALENDER KEGIATAN</p>
+                    <h2 id="calendar-section-title">Jadwal Kegiatan Informatika</h2>
+                </div>
+    
+                <div class="calendar-panel">
+                    <div class="calendar-toolbar" aria-label="Navigasi kalender">
+                        <div class="calendar-toolbar__navigation">
+                            <button id="calendarPrevious" class="icon-button" type="button" aria-label="Bulan sebelumnya"><i class="fa-solid fa-angle-left"></i></button>
+                            <button id="calendarNext" class="icon-button" type="button" aria-label="Bulan berikutnya"><i class="fa-solid fa-angle-right"></i></button>
+                            <button id="calendarToday" class="calendar-today-button" type="button">Hari Ini</button>
+                        </div>
+    
+                        <h3 id="calendarCurrentTitle" class="calendar-current-title" aria-live="polite"></h3>
+                    </div>
+    
+                    <div class="calendar-layout">
+                        <div class="calendar-main-column">
+                            
+                            <div id="calendarSwipeArea" class="calendar-swipe-area">
+                                <div id="calendar" aria-label="Kalender bulanan kegiatan"></div>
+                            </div>
+    
+                            <div id="monthEmptyState" class="month-empty-state" hidden>
+                                Belum ada agenda yang dipublikasikan untuk periode ini.
+                            </div>
+    
+                            <div class="category-legend" aria-label="Legenda kategori kegiatan">
+                                <span><i style="--legend-color:#24B8B1"></i>HIMTIKA</span>
+                                <span><i style="--legend-color:#2CCB91"></i>INFORMATIKA</span>
+                                <span><i style="--legend-color:#D6C26A"></i>FASILKOM</span>
+                                <span><i style="--legend-color:#E64D78"></i>BEM FASILKOM</span>
+                                <span><i style="--legend-color:#35A5D5"></i>BLM FASILKOM</span>
+                            </div>
+                        </div>
+    
+                        <aside class="agenda-panel" aria-labelledby="agenda-panel-title">
+                            <div class="agenda-panel__heading">
+                                <p id="eyebrow" class="section-eyebrow">AGENDA</p>
+                                <h3 id="agenda-panel-title">Agenda Minggu Ini</h3>
+                                <p id="agendaPanelRange" class="agenda-panel__range"></p>
+                            </div>
+        
+                            <div id="agendaPanelList" class="agenda-panel__list" aria-live="polite"></div>
+                            <p id="agendaPanelEmpty" class="empty-state" hidden>
+                                Belum ada agenda yang dipublikasikan untuk tanggal tersebut.
+                            </p>
+                        </aside>
+                    </div>
+                </div>
+            </section>
+            <!-- END KALENDER SECTION -->
+            
+            <!-- START PUBLIKASI SECTION -->
+            <section id="publikasi-section" class="publikasi-section margin-x-section">
+                <img src="assets/images/graphic/circle-pattern.svg" alt="half-circle-pattern-hero-top" class="publikasi-pattern">
+                <div class="publikasi-container">
+                    <div class="publikasi-image-wrapper">
+                        <div class="publikasi-image-badge">
+                            <svg class="publikasi-image-badge-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                <path fill="currentColor" d="M7.5 10.5h-1a1 1 0 0 0 0 2h1a1 1 0 0 0 0-2m5 0h-1a1 1 0 0 0 0 2h1a1 1 0 0 0 0-2m5 0h-1a1 1 0 0 0 0 2h1a1 1 0 0 0 0-2m-10 4h-1a1 1 0 0 0 0 2h1a1 1 0 0 0 0-2m5 0h-1a1 1 0 0 0 0 2h1a1 1 0 0 0 0-2m5 0h-1a1 1 0 0 0 0 2h1a1 1 0 0 0 0-2m-10 4h-1a1 1 0 0 0 0 2h1a1 1 0 0 0 0-2m5 0h-1a1 1 0 0 0 0 2h1a1 1 0 0 0 0-2m5 0h-1a1 1 0 0 0 0 2h1a1 1 0 0 0 0-2"/><path fill="currentColor" d="M21.5 3h-2.75a.25.25 0 0 1-.25-.25V1a1 1 0 0 0-2 0v4.75a.75.75 0 0 1-1.5 0V3.5a.5.5 0 0 0-.5-.5H8.25A.25.25 0 0 1 8 2.75V1a1 1 0 0 0-2 0v4.75a.75.75 0 0 1-1.5 0V3.5A.5.5 0 0 0 4 3H2.5a2 2 0 0 0-2 2v17a2 2 0 0 0 2 2h19a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2m0 18.5a.5.5 0 0 1-.5.5H3a.5.5 0 0 1-.5-.5v-12A.5.5 0 0 1 3 9h18a.5.5 0 0 1 .5.5Z"/>
+                            </svg>
+                        </div>
+                        <img 
+                            src="assets/images/bg/bg-publikasi.webp" 
+                            alt="Event Image" 
+                            class="publikasi-image noselect"
+                        />
+                        <div class="publikasi-image-overlay"></div>
+                    </div>
+    
+                    <div class="publikasi-content">
+                        <h2 class="publikasi-label">TANGGAL EVENT?</h2>
+                        <h3 class="publikasi-title">Ingin Mempublikasikan Tanggal Event di Kalender HIMTIKA?</h3>
+                        <p class="publikasi-description">Sampaikan informasi tanggal event yang akan diselenggarakan. Informasi tersebut akan kami tampilkan di kalender HIMTIKA agar lebih banyak mahasiswa yang tahu.</p>
+                        <a href="https://himtika.cs.unsika.ac.id/kontak-kami" class="btnleft noselect btn-publikasi">
                             <span>
-                                Lihat Kalender
+                                Hubungi Kami 
                             </span>
                             <svg viewBox="0 0 19 19" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M10 4L10 12.25L13.25 9L14 9.66L9.5 14.16L5 9.66L5.75 9L9 12.25L9 4H10ZM9.5 19C4.26 19 0 14.75 0 9.5C0 6.98044 1.00089 4.56408 2.78249 2.78249C4.56408 1.00089 6.98044 0 9.5 0C12.0196 0 14.4359 1.00089 16.2175 2.78249C17.9991 4.56408 19 6.98044 19 9.5C19 12.0196 17.9991 14.4359 16.2175 16.2175C14.4359 17.9991 12.0196 19 9.5 19ZM9.5 18C10.6162 18 11.7215 17.7801 12.7528 17.353C13.7841 16.9258 14.7211 16.2997 15.5104 15.5104C16.2997 14.7211 16.9258 13.7841 17.353 12.7528C17.7801 11.7215 18 10.6162 18 9.5C18 7.24566 17.1045 5.08365 15.5104 3.48959C13.9163 1.89553 11.7543 1 9.5 1C7.24566 1 5.08365 1.89553 3.48959 3.48959C1.89553 5.08365 1 7.24566 1 9.5C1 11.7543 1.89553 13.9163 3.48959 15.5104C5.08365 17.1045 7.24566 18 9.5 18Z" />
                             </svg>
-                        </button>
-                        <button class="btnhero-2">
-                            Agenda Terdekat
-                        </button>
+                        </a>
                     </div>
                 </div>
-                <div class="hidden lg:flex lg:justify-end xl:justify-center">
-                    <img src="assets/images/graphic/calender-graphic.png" alt="Grand Design HIMTIKA" class="lg:w-[70%] xl:w-[65%] 2xl:w-[75%] graphic-shadow floating">
+            </section>
+            <!-- END PUBLIKASI SECTION -->
+        </main>
+    
+        <dialog id="eventDialog" class="event-dialog" aria-labelledby="eventDialogTitle">
+            <article class="event-dialog__card">
+                <button id="eventDialogClose" class="event-dialog__close" type="button" aria-label="Tutup detail event"><i class="fa-solid fa-x"></i></button>
+    
+                <div class="event-dialog__media">
+                    <img id="eventDialogImage" src="" alt="" loading="lazy">
                 </div>
-            </div>
-        </section>
-        <!-- END HERO SECTION -->
-
-        <!-- START AGENDA TERDEKAT SECTION -->
-        <section id="agenda-terdekat-section">
-
-        </section>
-        <!-- END AGENDA TERDEKAT SECTION -->
-        
-        <!-- START KALENDER SECTION -->
-        <section id="kalender-section">
-
-        </section>
-        <!-- END KALENDER SECTION -->
-        
-        <!-- START PUBLIKASI SECTION -->
-        <section id="publikasi-section" class="publikasi-section margin-x-section relative font-montserrat bg-primaryBackground py-20 transition-all duration-500">
-            <img src="assets/images/graphic/circle-pattern.svg" alt="half-circle-pattern-hero-top" class="absolute top-0 right-0 w-50">
-            <div class="rounded-2xl border border-gray-500 flex flex-col lg:flex-row relative overflow-hidden">
-                
-                <div class="relative w-full lg:w-auto lg:flex-4 min-h-30 md:min-h-40 lg:min-h-full">
-                    <div class="z-10 absolute top-5 left-5 lg:top-8 lg:left-8 p-2 lg:p-2.5 bg-linear-to-br from-mainGold/80 to-darkGold/80 backdrop-blur-xs rounded-xl lg:rounded-2xl border-2 border-mainGold text-white">
-                        <svg class="w-6 h-6 md:w-8 md:h-8" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                            <path fill="currentColor" d="M7.5 10.5h-1a1 1 0 0 0 0 2h1a1 1 0 0 0 0-2m5 0h-1a1 1 0 0 0 0 2h1a1 1 0 0 0 0-2m5 0h-1a1 1 0 0 0 0 2h1a1 1 0 0 0 0-2m-10 4h-1a1 1 0 0 0 0 2h1a1 1 0 0 0 0-2m5 0h-1a1 1 0 0 0 0 2h1a1 1 0 0 0 0-2m5 0h-1a1 1 0 0 0 0 2h1a1 1 0 0 0 0-2m-10 4h-1a1 1 0 0 0 0 2h1a1 1 0 0 0 0-2m5 0h-1a1 1 0 0 0 0 2h1a1 1 0 0 0 0-2m5 0h-1a1 1 0 0 0 0 2h1a1 1 0 0 0 0-2"/><path fill="currentColor" d="M21.5 3h-2.75a.25.25 0 0 1-.25-.25V1a1 1 0 0 0-2 0v4.75a.75.75 0 0 1-1.5 0V3.5a.5.5 0 0 0-.5-.5H8.25A.25.25 0 0 1 8 2.75V1a1 1 0 0 0-2 0v4.75a.75.75 0 0 1-1.5 0V3.5A.5.5 0 0 0 4 3H2.5a2 2 0 0 0-2 2v17a2 2 0 0 0 2 2h19a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2m0 18.5a.5.5 0 0 1-.5.5H3a.5.5 0 0 1-.5-.5v-12A.5.5 0 0 1 3 9h18a.5.5 0 0 1 .5.5Z"/>
-                        </svg>
+    
+                <div class="event-dialog__body">
+                    <span id="eventDialogCategory" class="event-category-badge"></span>
+                    <h2 id="eventDialogTitle"></h2>
+                    <p id="eventDialogOrganizer" class="event-dialog__organizer"></p>
+    
+                    <dl class="event-dialog__meta">
+                        <div><dt>Tanggal</dt><dd id="eventDialogDate"></dd></div>
+                        <div><dt>Waktu</dt><dd id="eventDialogTime"></dd></div>
+                        <div><dt>Lokasi</dt><dd id="eventDialogLocation"></dd></div>
+                    </dl>
+    
+                    <p id="eventDialogDescription" class="event-dialog__description"></p>
+    
+                    <div class="event-dialog__actions noselect">
+                        <a id="eventDialogLink" class="primary-button" href="#" target="_blank" rel="noopener noreferrer">Lihat Informasi</a>
+                        <button id="eventDialogSecondaryClose" class="secondary-button" type="button">Tutup</button>
                     </div>
-                    <img 
-                        src="assets/images/bg/bg-publikasi.webp" 
-                        alt="Event Image" 
-                        class="absolute inset-0 w-full h-full object-cover object-center noselect"
-                    />
-                    <div class="absolute inset-0 bg-linear-to-b lg:bg-linear-to-r from-[#1e3c39]/80 sm:from-transparent via-[#1e3c39]/5 lg:via-[#1e3c39]/20 to-[#1e3c39]"></div>
                 </div>
-
-                <div class="w-full lg:w-auto lg:flex-6 py-5.5 lg:py-9 px-5.5 lg:pr-12 relative z-10 bg-green-200/5 backdrop-blur-[3px]">
-                    <h2 class="text-[11px] sm:text-xs md:text-sm lg:text-base text-mainGold font-semibold tracking-wider">TANGGAL EVENT?</h2>
-                    <h3 class="text-[17px] sm:text-lg lg:text-2xl leading-tight text-white font-semibold mt-1">Ingin Mempublikasikan Tanggal Event di Kalender HIMTIKA?</h3>
-                    <p class="text-[11px] sm:text-xs lg:text-sm text-white mt-4 lg:mt-5">Sampaikan informasi tanggal event yang akan diselenggarakan. Informasi tersebut akan kami tampilkan di kalender HIMTIKA agar lebih banyak mahasiswa yang tahu.</p>
-                    <a href="https://himtika.cs.unsika.ac.id/kontak-kami" class="btnleft noselect mt-5 sm:mt-6 w-fit btn-publikasi">
-                        <span>
-                            Hubungi Kami 
-                        </span>
-                        <svg viewBox="0 0 19 19" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M10 4L10 12.25L13.25 9L14 9.66L9.5 14.16L5 9.66L5.75 9L9 12.25L9 4H10ZM9.5 19C4.26 19 0 14.75 0 9.5C0 6.98044 1.00089 4.56408 2.78249 2.78249C4.56408 1.00089 6.98044 0 9.5 0C12.0196 0 14.4359 1.00089 16.2175 2.78249C17.9991 4.56408 19 6.98044 19 9.5C19 12.0196 17.9991 14.4359 16.2175 16.2175C14.4359 17.9991 12.0196 19 9.5 19ZM9.5 18C10.6162 18 11.7215 17.7801 12.7528 17.353C13.7841 16.9258 14.7211 16.2997 15.5104 15.5104C16.2997 14.7211 16.9258 13.7841 17.353 12.7528C17.7801 11.7215 18 10.6162 18 9.5C18 7.24566 17.1045 5.08365 15.5104 3.48959C13.9163 1.89553 11.7543 1 9.5 1C7.24566 1 5.08365 1.89553 3.48959 3.48959C1.89553 5.08365 1 7.24566 1 9.5C1 11.7543 1.89553 13.9163 3.48959 15.5104C5.08365 17.1045 7.24566 18 9.5 18Z" />
-                        </svg>
-                    </a>
+            </article>
+        </dialog>
+    
+        <!-- START BACK TO TOP BUTTON -->
+        <button class="button-back-to-top back-to-top" id="backToTop">
+            <svg class="svg" xmlns="http://www.w3.org/2000/svg" height="25px" viewBox="0 -960 960 960" width="25px" fill="#000000">
+                <path d="M440-160v-487L216-423l-56-57 320-320 320 320-56 57-224-224v487h-80Z"></path>
+            </svg>
+        </button>
+        <!-- END BACK TO TOP BUTTON -->
+    
+        <!----Start Footer-->
+        <footer class="site-footer">
+            <div class="footer-container">
+                <div class="footer-main-row">
+                    <div class="footer-brand-col">
+                        <div class="brand-content">
+                            <div class="logo-address-group">
+                                <img src="assets/images/logo/himtika-header.svg" alt="Logo Himtika" class="footer-logo" />
+                                <p class="footer-address">Jl. HS.Ronggo Waluyo, Puseurjaya, Telukjambe Timur, Karawang</p>
+                            </div>
+                            <div class="footer-social-wrapper">
+                                <a href="https://www.instagram.com/himtalks_?igsh=MW5tYm1iNG9udDB3dA==" target="_blank" class="footer-social-link">
+                                    <svg width="22" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M12 0C8.74 0 8.333.015 7.053.072 5.775.132 4.905.333 4.14.63c-.789.306-1.459.717-2.126 1.384S.935 3.35.63 4.14C.333 4.905.131 5.775.072 7.053.012 8.333 0 8.74 0 12s.015 3.667.072 4.947c.06 1.277.261 2.148.558 2.913.306.788.717 1.459 1.384 2.126.667.666 1.336 1.079 2.126 1.384.766.296 1.636.499 2.913.558C8.333 23.988 8.74 24 12 24s3.667-.015 4.947-.072c1.277-.06 2.148-.262 2.913-.558.788-.306 1.459-.718 2.126-1.384.666-.667 1.079-1.335 1.384-2.126.296-.765.499-1.636.558-2.913.06-1.28.072-1.687.072-4.947s-.015-3.667-.072-4.947c-.06-1.277-.262-2.149-.558-2.913-.306-.789-.718-1.459-1.384-2.126C21.319 1.347 20.651.935 19.86.63c-.765-.297-1.636-.499-2.913-.558C15.667.012 15.26 0 12 0zm0 2.16c3.203 0 3.585.016 4.85.071 1.17.055 1.805.249 2.227.415.562.217.96.477 1.382.896.419.42.679.819.896 1.381.164.422.36 1.057.413 2.227.057 1.266.07 1.646.07 4.85s-.015 3.585-.074 4.85c-.061 1.17-.256 1.805-.421 2.227-.224.562-.479.96-.899 1.382-.419.419-.824.679-1.38.896-.42.164-1.065.36-2.235.413-1.274.057-1.649.07-4.859.07-3.211 0-3.586-.015-4.859-.074-1.171-.061-1.816-.256-2.236-.421-.569-.224-.96-.479-1.379-.899-.421-.419-.69-.824-.9-1.38-.165-.42-.359-1.065-.42-2.235-.045-1.26-.061-1.649-.061-4.844 0-3.196.016-3.586.061-4.861.061-1.17.255-1.814.42-2.234.21-.57.479-.96.9-1.381.419-.419.81-.689 1.379-.898.42-.166 1.051-.361 2.221-.421 1.275-.045 1.65-.06 4.859-.06l.045.03zm0 3.678c-3.405 0-6.162 2.76-6.162 6.162 0 3.405 2.76 6.162 6.162 6.162 3.405 0 6.162-2.76 6.162-6.162 0-3.405-2.76-6.162-6.162-6.162zM12 16c-2.21 0-4-1.79-4-4s1.79-4 4-4 4 1.79 4 4-1.79 4-4 4zm7.846-10.405c0 .795-.646 1.44-1.44 1.44-.795 0-1.44-.646-1.44-1.44 0-.794.646-1.439 1.44-1.439.793-.001 1.44.645 1.44 1.439z" /></svg>
+                                </a>
+                                <a href="https://www.linkedin.com/company/himtika/" target="_blank" class="footer-social-link">
+                                    <svg width="20" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M22.2235 0H1.772C0.792 0 0 0.7735 0 1.73V22.265C0 23.222 0.792 24 1.772 24H22.2235C23.2035 24 24 23.222 24 22.27V1.73C24 0.773 23.203 0 22.2235 0ZM7.12 20.4515H3.558V8.9955H7.1205L7.12 20.4515ZM5.339 7.435C5.06781 7.43546 4.79918 7.38246 4.54849 7.27903C4.29779 7.17559 4.06995 7.02376 3.87798 6.83221C3.686 6.64065 3.53367 6.41314 3.4297 6.16267C3.32572 5.9122 3.27213 5.64369 3.272 5.3725C3.27213 5.10131 3.32572 4.8328 3.4297 4.58233C3.53367 4.33186 3.686 4.10435 3.87798 3.91279C4.06995 3.72124 4.29779 3.56941 4.54849 3.46597C4.79918 3.36254 5.06781 3.30954 5.339 3.31C5.88601 3.31 6.41061 3.5273 6.79741 3.91409C7.1842 4.30089 7.4015 4.82549 7.4015 5.3725C7.4015 5.91951 7.1842 6.44411 6.79741 6.83091C6.41061 7.2177 5.88601 7.435 5.339 7.435ZM20.4515 20.452H16.894V14.883C16.894 13.5565 16.8705 11.8455 15.042 11.8455C13.1905 11.8455 12.9095 13.2935 12.9095 14.789V20.4515H9.356V8.9955H12.769V10.5605H12.8155C13.289 9.6605 14.4515 8.7095 16.181 8.7095C19.786 8.7095 20.4515 11.0815 20.4515 14.1655V20.452Z" /></svg>
+                                </a>
+                                <a href="https://www.youtube.com/@himtikaofficial4428" target="_blank" class="footer-social-link">
+                                    <svg width="20" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" /></svg>
+                                </a>
+                                <a href="https://www.tiktok.com/@himtika_unsika" target="_blank" class="footer-social-link">
+                                    <svg width="20" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z" /></svg>
+                                </a>
+                                <a href="https://mail.google.com/mail/?view=cm&fs=1&to=himtika@unsika.ac.id" target="_blank" class="footer-social-link">
+                                    <svg width="24" viewBox="0 0 28 28" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M4.66626 5.1665H23.3333C24.3403 5.1665 25.1661 5.99247 25.1663 6.99951V20.9995C25.1663 22.0067 24.3404 22.8335 23.3333 22.8335H4.66626C3.65922 22.8333 2.83325 22.0066 2.83325 20.9995V6.99951C2.83342 6.05552 3.55932 5.27085 4.47974 5.17627L4.66626 5.1665ZM23.0686 8.90869L13.9993 14.5767L4.93188 8.90869L4.16626 8.43115V21.4995H23.8333V8.43115L23.0686 8.90869ZM4.40161 7.42432L13.7346 13.2573L14.0002 13.4224L14.2649 13.2573L23.5979 7.42432L25.0764 6.49951H2.9231L4.40161 7.42432Z" fill="currentColor" stroke="currentColor"/></svg>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+    
+                    <div class="footer-grid-col">
+                        <div class="footer-links-grid">
+                            <div class="link-group tentang-kami">
+                                <div>
+                                    <h3 class="group-title">Tentang Kami</h3>
+                                    <ul class="group-list">
+                                        <li><a href="https://himtika.cs.unsika.ac.id/struktur-organisasi">Struktur Organisasi</a></li>
+                                        <li><a href="https://himtika.cs.unsika.ac.id/sejarah-himtika">Sejarah</a></li>
+                                        <li><a href="https://himtika.cs.unsika.ac.id/logo-himtika">Logo</a></li>
+                                        <li><a href="https://himtika.cs.unsika.ac.id/galeri-himtika">Galeri</a></li>
+                                        <li><a href="https://himtika.cs.unsika.ac.id/grand-design-himtika">Grand Design</a></li>
+                                        <li><a href="https://himtika.cs.unsika.ac.id/visi-misi">Visi Misi</a></li>
+                                        <li><a href="https://himtika.cs.unsika.ac.id/kontak-kami">Kontak Kami</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+    
+                            <div class="link-group align-right-lg media-hp-footer">
+                                <div>
+                                    <h3 class="group-title">Media</h3>
+                                    <ul class="group-list">
+                                        <li><a href="https://www.instagram.com/himtika_unsika/" target="_blank">Berita</a></li>
+                                        <li><a href="https://himtika.cs.unsika.ac.id/hikode/" target="_blank">Artikel HIMTIKA</a></li>
+                                        <li><a href="https://www.instagram.com/cnc_himtika/" target="_blank">Info Lomba</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+    
+                            <div class="link-group align-center-lg">
+                                <div>
+                                    <h3 class="group-title">Event</h3>
+                                    <ul class="group-list">
+                                        <li><a href="https://himtika.cs.unsika.ac.id/open-project/" target="_blank">Create and Compete</a></li>
+                                        <li><a href="https://himtika.cs.unsika.ac.id/himtika-exchange/" target="_blank">Himtika Exchange</a></li>
+                                        <li><a href="https://himtika.cs.unsika.ac.id/hgtc/" target="_blank">HGTC</a></li>
+                                        <li><a href="https://himtika.cs.unsika.ac.id/studyclub/" target="_blank">Study Club</a></li>
+                                        <li><a href="https://himtika.cs.unsika.ac.id/pekan-it/" target="_blank">Pekan IT: NIC</a></li>
+                                        <li><a href="https://himtika.cs.unsika.ac.id/pekan-it/detail-semantik/" target="_blank">Pekan IT: Semantik IC</a></li>
+                                        <li><a href="https://himtika.cs.unsika.ac.id/lkmmpd/" target="_blank">LKMM-PD</a></li>
+                                        <li><a href="https://himtika.cs.unsika.ac.id/diesnatalis/" target="_blank">Diesnatalis</a></li>
+                                        <li><a href="https://himtika.cs.unsika.ac.id/it-bootcamp/" target="_blank">IT Bootcamp</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+    
+                            <div class="link-group align-right-lg aplikasi-publik">
+                                <div>
+                                    <h3 class="group-title aplikasi-publik">Aplikasi Publik</h3>
+                                    <ul class="group-list">
+                                        <li><a href="https://himtalks.vercel.app/himtalks" target="_blank">Himtalks</a></li>
+                                        <li><a href="https://himtika.cs.unsika.ac.id/himtika-awards/" target="_blank">Himtika Award</a></li>
+                                        <li><a href="https://himtika.cs.unsika.ac.id/media-partner/" target="_blank">Media Partner</a></li>
+                                        <li><a href="https://himtika.cs.unsika.ac.id/corporation/" target="_blank">Corporation</a></li>
+                                        <li><a href="https://himtika.cs.unsika.ac.id/kalender/" target="_blank">Kalender</a></li>
+                                        <li><a href="https://himtika.cs.unsika.ac.id/dosen/" target="_blank">Tenaga Pendidik</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+    
+                <div class="footer-bottom">
+                    <p class="copyright-text">Licensed, Registered, and Authorized by</p>
+                    <div class="authorized-brand">
+                        <img src="assets/images/logo/HIMTIKA.webp" alt="HIMTIKA" class="mini-logo" />
+                        <span>HIMTIKA 2026</span>
+                    </div>
                 </div>
             </div>
-        </section>
-        <!-- END PUBLIKASI SECTION -->
-        
-    </main>
+        </footer>
+        <!-- Footer End -->
+    </div>
+
+    <script src="assets/js/jquery.js"></script>
+    <script src="assets/js/scrollbar.js"></script>
+    <script src="assets/js/script.js"></script>
+    <script src="assets/js/calendar-events.js" defer></script>
+    <script src="assets/js/calendar.js" defer></script>
 </body>
 </html>
