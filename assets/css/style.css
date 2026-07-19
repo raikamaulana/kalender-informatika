@@ -1325,7 +1325,7 @@ img, svg {
     display: flex;
     align-items: center;
     gap: 6px;
-    margin-bottom: 12px;
+    margin-bottom: 4px;
 }
 
 .carousel-button {
@@ -1493,7 +1493,7 @@ img, svg {
 
 /* Tanggal yang dipilih */
 #calendar .fc-daygrid-day.is-selected-day {
-    box-shadow: inset 0 0 0 1px rgba(214, 194, 106, 0.5);
+    background-color: rgba(214, 194, 106, 0.10);
 }
 #calendar .is-selected-day .fc-daygrid-day-number {
     border-radius: 50%;
@@ -1650,14 +1650,15 @@ img, svg {
     width: fit-content;
     align-items: center;
     justify-content: center;
-    padding: 5px 12px;
+    padding: 5px 10px;
     border: 1px solid color-mix(in srgb, var(--category-color) 68%, white 10%);
     border-radius: 999px;
     background: color-mix(in srgb, var(--category-color) 26%, transparent);
     color: #fff;
-    font-size: 10px;
+    font-size: 9px;
     font-weight: 600;
     letter-spacing: 0.03em;
+    line-height: 1;
     font-family: var(--font-montserrat);
 }
 
@@ -1675,7 +1676,7 @@ img, svg {
     text-align: center;
 }
 
-.event-dialog {
+/* .event-dialog {
     width: min(calc(100% - 20px), 720px);
     max-height: calc(100dvh - 20px);
     margin: auto auto 0;
@@ -1698,7 +1699,7 @@ img, svg {
 }
 
 .event-dialog__card {
-    osition: relative;
+    position: relative;
 }
 
 .event-dialog__close {
@@ -1742,8 +1743,6 @@ img, svg {
 
 .event-dialog h2 {
     margin-top: 12px;
-    /* font-size: 26px; 2xl */
-    /* font-size: 23px; xl */
     font-size: 21px;
     line-height: 1.2;
 }
@@ -1787,7 +1786,6 @@ img, svg {
 
 .event-dialog__description {
     margin: 20px 0;
-    /* font-size: 14px; */
     font-size: 12px;
     line-height: 1.7;
 }
@@ -1796,15 +1794,217 @@ img, svg {
     display: flex;
     flex-direction: column;
     gap: 10px;
+} */
+
+.event-dialog {
+    width: min(calc(100% - 32px), 760px);
+    max-height: calc(100dvh - 20px);
+    margin: auto auto 0;
+    padding: 0;
+    overflow: hidden;
+    border: 1px solid var(--border-strong);
+    border-radius: 24px 24px 0 0;
+    background: #082a27;
+    color: var(--text);
+    box-shadow: var(--shadow);
+    overscroll-behavior: none;
+}
+.event-dialog ::selection {
+    background-color: var(--color-darkGold);
+    color: #ffffff;
+}
+.event-dialog::backdrop {
+    background: rgba(0, 11, 10, 0.72);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    overscroll-behavior: none;
+}
+.event-dialog__card {
+    position: relative;
+    display: flex;
+    max-height: calc(100dvh - 20px);
+    flex-direction: column;
+    overflow: hidden;
+    overscroll-behavior: none;
+}
+/* Header tidak ikut bergerak ketika body di-scroll */
+.event-dialog__header {
+    position: relative;
+    z-index: 2;
+    flex: 0 0 auto;
+    padding: 15px 24px 20px 20px;
+    border-bottom: 1px solid var(--border);
+    background:
+        linear-gradient(
+            180deg,
+            rgba(13, 56, 52, 0.98),
+            rgba(8, 42, 39, 0.98)
+        );
+}
+.event-dialog__category {
+    display: flex;
+    gap: 6px;
+    align-items: center;
+}
+.event-dialog__close {
+    position: absolute;
+    top: 14px;
+    right: 14px;
+    line-height: 1;
+    z-index: 5;
+    display: inline-flex;
+    width: 38px;
+    height: 38px;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid rgba(255, 255, 255, 0.24);
+    border-radius: 50%;
+    background: rgba(3, 24, 22, 0.88);
+    color: #ffffff;
+    cursor: pointer;
+    font-size: 15px;
+    transition:
+        background-color 0.3s ease,
+        color 0.3s ease,
+        transform 0.3s ease;
+}
+.event-dialog__close:hover {
+    background-color: var(--gold-bright);
+    color: #000000;
+    transform: rotate(90deg);
+}
+.event-dialog h2 {
+    margin-top: 18px;
+    font-size: 21px;
+    line-height: 1.25;
+}
+.event-dialog__organizer {
+    margin-top: 2px;
+    color: var(--color-mainGold);
+    font-weight: 700;
+    font-family: var(--font-montserrat);
+    font-size: 11px;
+}
+.event-dialog__datetime {
+    margin-top: 14px;
+    color: var(--text-muted);
+    font-size: 13px;
+    font-weight: 500;
+    line-height: 1.6;
+}
+.event-dialog__location {
+    position: relative;
+    margin-top: 5px;
+    padding-left: 19px;
+    color: var(--color-mainGold);
+    font-size: 13px;
+    line-height: 1.5;
+}
+.event-dialog__location::before {
+    position: absolute;
+    left: 0;
+    color: var(--color-mainGold);
+    content: "\f3c5";
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
+}
+/* Hanya area ini yang dapat di-scroll */
+.event-dialog__scroll {
+    min-height: 0;
+    flex: 1 1 auto;
+    overflow-x: hidden;
+    overflow-y: auto;
+
+    overscroll-behavior-y: contain;
+    -webkit-overflow-scrolling: touch;
+    touch-action: pan-y;
+    /* overscroll-behavior: contain;
+    scrollbar-gutter: stable; */
+}
+.event-dialog__media {
+    display: flex;
+    min-height: 190px;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    background: linear-gradient(135deg, #0c4741, #137b70);
+}
+/* Poster portrait dan landscape tidak dipotong */
+.event-dialog__media img {
+    display: block;
+    width: 100%;
+    height: auto;
+    max-height: none;
+    object-fit: contain;
+}
+.event-dialog__content {
+    padding: 22px 18px 26px;
+}
+.event-dialog__custom-content {
+    color: var(--text-muted);
+    font-size: 13px;
+    line-height: 1.75;
+}
+.event-dialog__custom-content > :first-child {
+    margin-top: 0;
+}
+.event-dialog__custom-content > :last-child {
+    margin-bottom: 0;
+}
+.event-dialog__custom-content p {
+    margin: 0 0 16px;
+}
+.event-dialog__custom-content h3,
+.event-dialog__custom-content h4 {
+    margin: 24px 0 10px;
+    color: var(--text);
+    font-family: var(--font-montserrat);
+    line-height: 1.35;
+}
+.event-dialog__custom-content h3 {
+    font-size: 17px;
+}
+.event-dialog__custom-content h4 {
+    font-size: 15px;
+}
+.event-dialog__custom-content ul,
+.event-dialog__custom-content ol {
+    display: grid;
+    gap: 8px;
+    margin: 0 0 18px;
+    padding-left: 22px;
+}
+.event-dialog__custom-content li::marker {
+    color: var(--color-mainGold);
+}
+.event-dialog__custom-content a {
+    color: var(--gold-bright);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+}
+.event-dialog__custom-content strong {
+    color: var(--text);
+}
+.event-dialog__note {
+    padding: 10px 15px;
+    line-height: 1.5;
+    border: 1px solid var(--border-strong);
+    border-radius: 12px;
+    background: rgba(214, 194, 106, 0.07);
+}
+.event-dialog__actions {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 24px;
 }
 
 .primary-button,
 .secondary-button {
     display: inline-flex;
-    min-height: 44px;
     align-items: center;
     justify-content: center;
-    padding-inline: 18px;
+    padding: 9px 24px;
     border-radius: 12px;
     cursor: pointer;
     font-weight: 600;
@@ -1819,7 +2019,7 @@ img, svg {
 }
 
 .secondary-button {
-    border: 1px solid var(--border);
+    border: 1px solid var(--border-strong);
     background: transparent;
     color: var(--text);
 }

@@ -55,10 +55,16 @@
     elements.eventDialogCategory = document.getElementById("eventDialogCategory");
     elements.eventDialogTitle = document.getElementById("eventDialogTitle");
     elements.eventDialogOrganizer = document.getElementById("eventDialogOrganizer");
-    elements.eventDialogDate = document.getElementById("eventDialogDate");
-    elements.eventDialogTime = document.getElementById("eventDialogTime");
+
+    // elements.eventDialogDate = document.getElementById("eventDialogDate");
+    // elements.eventDialogTime = document.getElementById("eventDialogTime");
+    // elements.eventDialogDescription = document.getElementById("eventDialogDescription");
+
+    elements.eventDialogDateTime = document.getElementById("eventDialogDateTime");
     elements.eventDialogLocation = document.getElementById("eventDialogLocation");
-    elements.eventDialogDescription = document.getElementById("eventDialogDescription");
+    elements.eventDialogContent = document.getElementById("eventDialogContent");
+
+    elements.eventDialogLocation = document.getElementById("eventDialogLocation");
     elements.eventDialogLink = document.getElementById("eventDialogLink");
   }
 
@@ -199,6 +205,8 @@
         organizer: event.organizer,
         location: event.location,
         description: event.description,
+        timeLabel: event.timeLabel,
+        dialogContent: event.dialogContent,
         image: event.image,
         link: event.link,
         featured: event.featured
@@ -594,6 +602,48 @@
       });
   }
 
+  // function openEventDialog(event, triggerElement) {
+  //   const category = getCategory(event.category);
+  //   state.lastFocusedElement = triggerElement || document.activeElement;
+
+  //   elements.eventDialogCategory.textContent = category.label;
+  //   elements.eventDialogCategory.style.setProperty("--category-color", category.color);
+  //   elements.eventDialogTitle.textContent = event.title;
+  //   elements.eventDialogOrganizer.textContent = event.organizer;
+  //   elements.eventDialogDate.textContent = formatWeekdayDate(event.start);
+  //   elements.eventDialogTime.textContent = formatTimeRange(event.start, event.end);
+  //   elements.eventDialogLocation.textContent = event.location;
+  //   elements.eventDialogDescription.textContent = event.description;
+
+  //   if (event.image) {
+  //     elements.eventDialogImage.src = event.image;
+  //     elements.eventDialogImage.alt = `Poster ${event.title}`;
+  //     elements.eventDialogImage.hidden = false;
+  //     elements.eventDialogImage.parentElement.style.background = category.fallback;
+  //     elements.eventDialogImage.onerror = () => {
+  //       elements.eventDialogImage.hidden = true;
+  //     };
+  //   } else {
+  //     elements.eventDialogImage.removeAttribute("src");
+  //     elements.eventDialogImage.alt = "";
+  //     elements.eventDialogImage.hidden = true;
+  //     elements.eventDialogImage.parentElement.style.background = category.fallback;
+  //   }
+
+  //   if (event.link) {
+  //     elements.eventDialogLink.href = event.link;
+  //     elements.eventDialogLink.hidden = false;
+  //   } else {
+  //     elements.eventDialogLink.hidden = true;
+  //   }
+
+  //   if (typeof elements.eventDialog.showModal === "function") {
+  //     elements.eventDialog.showModal();
+  //   } else {
+  //     elements.eventDialog.setAttribute("open", "");
+  //   }
+  // }
+
   function openEventDialog(event, triggerElement) {
     const category = getCategory(event.category);
     state.lastFocusedElement = triggerElement || document.activeElement;
@@ -602,32 +652,65 @@
     elements.eventDialogCategory.style.setProperty("--category-color", category.color);
     elements.eventDialogTitle.textContent = event.title;
     elements.eventDialogOrganizer.textContent = event.organizer;
-    elements.eventDialogDate.textContent = formatWeekdayDate(event.start);
-    elements.eventDialogTime.textContent = formatTimeRange(event.start, event.end);
-    elements.eventDialogLocation.textContent = event.location;
-    elements.eventDialogDescription.textContent = event.description;
+    elements.eventDialogDateTime.textContent = formatEventDialogDateTime(event);
+    elements.eventDialogLocation.textContent = event.location || "Lokasi belum diumumkan";
 
+    // dialogContent berasal dari file statis yang dikelola sendiri. Jika tidak diisi, gunakan description sebagai fallback.
+    if (typeof event.dialogContent === "string" && event.dialogContent.trim()) {
+      elements.eventDialogContent.innerHTML = event.dialogContent;
+    } else {
+      elements.eventDialogContent.innerHTML = `
+        <p>${escapeHtml(
+          event.description ||
+          "Informasi lengkap kegiatan belum tersedia."
+        )}</p>
+      `;
+    }
+
+    const mediaElement = elements.eventDialogImage.parentElement;
     if (event.image) {
       elements.eventDialogImage.src = event.image;
       elements.eventDialogImage.alt = `Poster ${event.title}`;
       elements.eventDialogImage.hidden = false;
-      elements.eventDialogImage.parentElement.style.background = category.fallback;
+      mediaElement.hidden = false;
+      mediaElement.style.background = category.fallback;
+
       elements.eventDialogImage.onerror = () => {
+        elements.eventDialogImage.removeAttribute("src");
         elements.eventDialogImage.hidden = true;
+        mediaElement.style.background = category.fallback;
       };
     } else {
       elements.eventDialogImage.removeAttribute("src");
       elements.eventDialogImage.alt = "";
       elements.eventDialogImage.hidden = true;
-      elements.eventDialogImage.parentElement.style.background = category.fallback;
+
+      /*
+      * Tetap tampilkan fallback gradient.
+      * Ubah menjadi true apabila kamu ingin media benar-benar
+      * hilang ketika event tidak mempunyai gambar.
+      */
+      mediaElement.hidden = false;
+      mediaElement.style.background = category.fallback;
     }
 
     if (event.link) {
       elements.eventDialogLink.href = event.link;
       elements.eventDialogLink.hidden = false;
     } else {
+      elements.eventDialogLink.removeAttribute("href");
       elements.eventDialogLink.hidden = true;
     }
+
+    /*
+    * Setiap dialog baru dibuka, posisi body dikembalikan ke atas.
+    */
+    const scrollArea =
+      elements.eventDialog.querySelector(
+        ".event-dialog__scroll"
+      );
+
+    if (scrollArea) { scrollArea.scrollTop = 0; }
 
     if (typeof elements.eventDialog.showModal === "function") {
       elements.eventDialog.showModal();
@@ -778,6 +861,39 @@
     if (!endInput) return `${startText} WIB`;
     const endText = formatTime(endInput);
     return `${startText}–${endText} WIB`;
+  }
+
+  function formatEventDialogDateTime(event) {
+    const start = parseDateInput(event.start);
+    const end = event.end ? parseDateInput(event.end) : null;
+    const customEndLabel = typeof event.timeLabel === "string" ? event.timeLabel.trim() : "";
+
+    if (!end) { return `${formatWeekdayDate(start)} • ${formatTime(start)} WIB`; }
+
+    const isSameEventDay = isSameDay(start, end);
+
+    /* Event satu hari, waktu selesai tidak diketahui. */
+    if (isSameEventDay && customEndLabel) {
+      return (
+        `${formatWeekdayDate(start)} • ` + `${formatTime(start)} WIB–${customEndLabel}`
+      );
+    }
+    /* Event satu hari, jam selesai diketahui. */
+    if (isSameEventDay) {
+      return (
+        `${formatWeekdayDate(start)} • ` + `${formatTime(start)}–${formatTime(end)} WIB`
+      );
+    }
+    /* Event beberapa hari, waktu selesai tidak diketahui. */
+    if (customEndLabel) {
+      return (
+        `${formatWeekdayDate(start)} ${formatTime(start)} WIB – ` + `${formatWeekdayDate(end)} ${customEndLabel}`
+      );
+    }
+    /* Event beberapa hari, jam mulai dan selesai diketahui. */
+    return (
+      `${formatWeekdayDate(start)} ${formatTime(start)} WIB – ` + `${formatWeekdayDate(end)} ${formatTime(end)} WIB`
+    );
   }
 
   function formatDateRange(startInput, endInput) {

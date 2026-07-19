@@ -339,36 +339,41 @@
                 </div>
             </section>
             <!-- END PUBLIKASI SECTION -->
-        </main>
-    
-        <dialog id="eventDialog" class="event-dialog" aria-labelledby="eventDialogTitle">
-            <article class="event-dialog__card">
-                <button id="eventDialogClose" class="event-dialog__close" type="button" aria-label="Tutup detail event"><i class="fa-solid fa-x"></i></button>
-    
-                <div class="event-dialog__media">
-                    <img id="eventDialogImage" src="" alt="" loading="lazy">
-                </div>
-    
-                <div class="event-dialog__body">
-                    <span id="eventDialogCategory" class="event-category-badge"></span>
-                    <h2 id="eventDialogTitle"></h2>
-                    <p id="eventDialogOrganizer" class="event-dialog__organizer"></p>
-    
-                    <dl class="event-dialog__meta">
-                        <div><dt>Tanggal</dt><dd id="eventDialogDate"></dd></div>
-                        <div><dt>Waktu</dt><dd id="eventDialogTime"></dd></div>
-                        <div><dt>Lokasi</dt><dd id="eventDialogLocation"></dd></div>
-                    </dl>
-    
-                    <p id="eventDialogDescription" class="event-dialog__description"></p>
-    
-                    <div class="event-dialog__actions noselect">
-                        <a id="eventDialogLink" class="primary-button" href="#" target="_blank" rel="noopener noreferrer">Lihat Informasi</a>
-                        <button id="eventDialogSecondaryClose" class="secondary-button" type="button">Tutup</button>
+
+            <dialog id="eventDialog" class="event-dialog" aria-labelledby="eventDialogTitle">
+                <article class="event-dialog__card">
+                    <button id="eventDialogClose" class="event-dialog__close" type="button" aria-label="Tutup detail event">
+                        <i class="fa-solid fa-x"></i>
+                    </button>
+
+                    <header class="event-dialog__header">
+                        <div class="event-dialog__category">
+                            <span id="eventDialogCategory" class="event-category-badge"></span>
+                            <span>-</span>
+                            <p id="eventDialogOrganizer" class="event-dialog__organizer"></p>
+                        </div>
+                        <h2 id="eventDialogTitle"></h2>
+                        <p id="eventDialogDateTime" class="event-dialog__datetime"></p>
+                        <p id="eventDialogLocation" class="event-dialog__location"></p>
+                    </header>
+
+                    <div class="event-dialog__scroll">
+                        <div class="event-dialog__media">
+                            <img id="eventDialogImage" src="" alt="" loading="lazy">
+                        </div>
+
+                        <div class="event-dialog__content">
+                            <div id="eventDialogContent" class="event-dialog__custom-content"></div>
+
+                            <div class="event-dialog__actions noselect">
+                                <a id="eventDialogLink" class="primary-button" href="#" target="_blank" rel="noopener noreferrer">Lihat Tautan Informasi</a>
+                                <button id="eventDialogSecondaryClose" class="secondary-button" type="button">Tutup</button>
+                            </div>
+                        </div>
                     </div>
-                </div>
-            </article>
-        </dialog>
+                </article>
+            </dialog>
+        </main>
     
         <!-- START BACK TO TOP BUTTON -->
         <button class="button-back-to-top back-to-top" id="backToTop">
