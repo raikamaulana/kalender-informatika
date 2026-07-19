@@ -40,9 +40,9 @@ const categoryConfig = Object.freeze({
   * end: "2026-08-28T12:00:00",
   * timeLabel: ""
   * 
-  * || Jam selesai diketahui
-  * end: "2026-08-28T12:00:00",
-  * timeLabel: ""
+  * || Jam selesai tidak diketahui
+  * end: "2026-08-28T23:59:00",
+  * timeLabel: "selesai"
   * 
   * JANGAN MENULIS
   * end: "2026-08-28"
@@ -59,26 +59,7 @@ const calendarEvents = Object.freeze([
     organizer: "HIMTIKA UNSIKA",
     location: "Gd. Fasilkom",
     description: "Kompetisi bagi Mahasiswa Informatika Unsika untuk menunjukkan bakat dan keahlian hard kill",
-    dialogContent: `
-      <p>
-        IT Bootcamp merupakan kegiatan pengenalan lingkungan
-        Informatika UNSIKA untuk mengembangkan kemampuan teknis,
-        kemampuan interpersonal, dan kebersamaan mahasiswa.
-      </p>
-
-      <h3>Informasi Kegiatan</h3>
-
-      <ul>
-        <li>Peserta wajib hadir tepat waktu.</li>
-        <li>Membawa perlengkapan yang telah ditentukan.</li>
-        <li>Mengikuti seluruh rangkaian kegiatan.</li>
-      </ul>
-
-      <p class="event-dialog__note">
-        Informasi lebih lengkap dapat dilihat melalui tautan
-        resmi kegiatan.
-      </p>
-    `,
+    dialogContent: ``,
     image: "./assets/images/events/bg-semantik.webp",
     link: "https://www.instagram.com/pekanit_unsika/",
     featured: true
@@ -91,97 +72,75 @@ const calendarEvents = Object.freeze([
     timeLabel: "",
     category: "himtika",
     organizer: "HIMTIKA UNSIKA",
-    location: "T. kumpul: Aula Syekh Quro",
-    description: "Studi banding ke HMIF UPNVJ.",
-    dialogContent: `
-      <p>
-        IT Bootcamp merupakan kegiatan pengenalan lingkungan
-        Informatika UNSIKA untuk mengembangkan kemampuan teknis,
-        kemampuan interpersonal, dan kebersamaan mahasiswa.
-      </p>
-
-      <h3>Informasi Kegiatan</h3>
-
-      <ul>
-        <li>Peserta wajib hadir tepat waktu.</li>
-        <li>Membawa perlengkapan yang telah ditentukan.</li>
-        <li>Mengikuti seluruh rangkaian kegiatan.</li>
-      </ul>
-
-      <p class="event-dialog__note">
-        Informasi lebih lengkap dapat dilihat melalui tautan
-        resmi kegiatan.
-      </p>
-    `,
-    image: "",
-    link: "https://youtu.be/xM5NkhJl__I?si=wM5F8V6H4-LDPi8n",
+    location: "T. kumpul: Depan Aula Syekh Quro",
+    description: "Kegiatan untuk menjalin relasi serta mendapatkan ilmu dengan himpunan universitas lain. Studi banding tahun ini dengan HMIF UPNVJ.",
+    dialogContent: ``,
+    image: "./assets/images/events/bg-he.webp",
+    link: "https://www.instagram.com/reel/DYW_J4Ulqyg/?igsh=Z3YwZzF5ZGM2ZmJ6",
     featured: true
   },
   {
     id: "evt-003",
     title: "Hi-Link: HGTC (HIMTIKA Goes To Company)",
-    start: "2026-07-19T06:00:00",
-    end: "2026-07-19T20:30:00",
+    start: "2026-07-03T06:00:00",
+    end: "2026-07-03T20:30:00",
     timeLabel: "",
     category: "himtika",
     organizer: "HIMTIKA UNSIKA",
-    location: "T. kumpul: Rektorat",
+    location: "T. kumpul: Depan Aula Syekh Quro Unsika",
     description: "Kunjungan industri ke Hacktiv8 dan BLU by BCA Digital.",
     dialogContent: `
+      <h3>⚠️ [ HIMTIKA Goes To Company 2026 ] ⚠️</h3>
+      <span>
+        Halo teman-teman Peserta  HGTC 2026 👋.
+      </span>
       <p>
-        IT Bootcamp merupakan kegiatan pengenalan lingkungan
-        Informatika UNSIKA untuk mengembangkan kemampuan teknis,
-        kemampuan interpersonal, dan kebersamaan mahasiswa.
+        Diinformasikan kepada seluruh Peserta untuk memperhatikan ketentuan berikut pada pelaksanaan kegiatan <b>HIMTIKA Goes To Company 2026</b>.
       </p>
+      <h3>📍 Titik Kumpul: Depan AULA UNSIKA</h3>
+      <h3>⏰ Tanggal & Waktu: Jumat, 3 Juli 2026 kumpul Jam 05:00 WIB </h3>
 
-      <h3>Informasi Kegiatan</h3>
-
+      <h3>👕 Dresscode:</h3>
       <ul>
-        <li>Peserta wajib hadir tepat waktu.</li>
-        <li>Membawa perlengkapan yang telah ditentukan.</li>
-        <li>Mengikuti seluruh rangkaian kegiatan.</li>
+        <li>Almamaters</li>
+        <li>Pakaian Sopan dan Rapih</li>
+        <li>Sepatu</li>
+        <li>Boleh menggunakan outer</li>
       </ul>
+      <h3>🎒 Perlengkapan yang wajib dibawa:</h3>
+      <ul>
+        <li>Alat Tulis</li>
+        <li>Tumblr / botol minum pribadi</li>
+        <li>Keperluan pribadi lainnya yang diperlukan</li>
+      </ul>
+      <p>
+        ⚠️ Diharapkan seluruh peserta dapat menjaga ketertiban, disiplin waktu, serta mematuhi seluruh ketentuan yang telah ditetapkan agar kegiatan dapat berjalan dengan lancar.
+      </p>
+      <p>
+        Sampai jumpa dan semangat untuk HIMTIKA Goes To Company 2026 🚀✨
+      </p>
 
       <p class="event-dialog__note">
         Informasi lebih lengkap dapat dilihat melalui tautan
         resmi kegiatan.
       </p>
     `,
-    image: "",
+    image: "./assets/images/events/bg-hgtc.webp",
     link: "https://youtu.be/iNu6ZJkP6qY?si=cgUOWNUOqPsxmFez",
     featured: true
   },
   {
     id: "evt-004",
-    title: "Study Club",
-    start: "2026-08-26T07:00:00",
-    end: "2026-08-26T12:00:00",
-    timeLabel: "",
-    category: "informatika",
+    title: "Pembukaan Study Club",
+    start: "2026-08-15T07:00:00",
+    end: "2026-08-15T23:59:00",
+    timeLabel: "selesai",
+    category: "himtika",
     organizer: "HIMTIKA UNSIKA",
     location: "Gd. Fasilkom",
     description: "Kegiatan belajar bersama mhs informatika bersama para mentor ahli di tiap kelas yang disediakan.",
-    dialogContent: `
-      <p>
-        IT Bootcamp merupakan kegiatan pengenalan lingkungan
-        Informatika UNSIKA untuk mengembangkan kemampuan teknis,
-        kemampuan interpersonal, dan kebersamaan mahasiswa.
-      </p>
-
-      <h3>Informasi Kegiatan</h3>
-
-      <ul>
-        <li>Peserta wajib hadir tepat waktu.</li>
-        <li>Membawa perlengkapan yang telah ditentukan.</li>
-        <li>Mengikuti seluruh rangkaian kegiatan.</li>
-      </ul>
-
-      <p class="event-dialog__note">
-        Informasi lebih lengkap dapat dilihat melalui tautan
-        resmi kegiatan.
-      </p>
-    `,
-    image: "",
+    dialogContent: ``,
+    image: "./assets/images/events/bg-study-club.webp",
     link: "https://www.instagram.com/studyclub_id/",
     featured: true
   },
@@ -191,43 +150,24 @@ const calendarEvents = Object.freeze([
     start: "2026-08-26T06:00:00",
     end: "2026-08-26T16:00:00",
     timeLabel: "",
-    category: "bem",
+    category: "himtika",
     organizer: "HIMTIKA UNSIKA",
-    location: "Aula Syekh Quro",
+    location: "Aula Syekh Quro Unsika",
     description: "Latihan Kepemimpinan dan Manajemen Mahasiswa untuk mahasiswa baru Informatika 2026",
-    dialogContent: `
-      <p>
-        IT Bootcamp merupakan kegiatan pengenalan lingkungan
-        Informatika UNSIKA untuk mengembangkan kemampuan teknis,
-        kemampuan interpersonal, dan kebersamaan mahasiswa.
-      </p>
-
-      <h3>Informasi Kegiatan</h3>
-
-      <ul>
-        <li>Peserta wajib hadir tepat waktu.</li>
-        <li>Membawa perlengkapan yang telah ditentukan.</li>
-        <li>Mengikuti seluruh rangkaian kegiatan.</li>
-      </ul>
-
-      <p class="event-dialog__note">
-        Informasi lebih lengkap dapat dilihat melalui tautan
-        resmi kegiatan.
-      </p>
-    `,
-    image: "./assets/images/events/bg-semantik.webp",
+    dialogContent: ``,
+    image: "",
     link: "https://www.instagram.com/himtika_unsika/",
     featured: false
   },
   {
     id: "evt-006",
     title: "IT Bootcamp",
-    start: "2026-08-26T06:00:00",
-    end: "2026-08-28T12:00:00",
-    timeLabel: "",
-    category: "fasilkom",
-    organizer: "Fasilkom UNSIKA",
-    location: "soon",
+    start: "2026-09-03T06:00:00",
+    end: "2026-09-04T23:59:00",
+    timeLabel: "selesai",
+    category: "himtika",
+    organizer: "HIMTIKA UNSIKA",
+    location: "Coming soon",
     description: "Kegiatan pengenalan lingkungan Informatika Unsika untuk mengembangkan hardskill dan softskill serta membanung kebersamaan antarmahasiswa baru.",
     dialogContent: `
       <p>
@@ -256,67 +196,14 @@ const calendarEvents = Object.freeze([
   {
     id: "evt-007",
     title: "Dies Natalis HIMTIKA IX",
-    start: "2026-08-26T08:00:00",
-    end: "2026-08-26T20:00:00",
-    timeLabel: "",
-    category: "blm",
-    organizer: "HIMTIKA UNSIKA",
-    location: "soon",
-    description: "Rangkaian acara untuk memperingati hari lahir HIMTIKA ke-9 dalam rangka mempererat silaturahmi seluruh mahasiswa Informatika.",
-    dialogContent: `
-      <p>
-        IT Bootcamp merupakan kegiatan pengenalan lingkungan
-        Informatika UNSIKA untuk mengembangkan kemampuan teknis,
-        kemampuan interpersonal, dan kebersamaan mahasiswa.
-      </p>
-
-      <h3>Informasi Kegiatan</h3>
-
-      <ul>
-        <li>Peserta wajib hadir tepat waktu.</li>
-        <li>Membawa perlengkapan yang telah ditentukan.</li>
-        <li>Mengikuti seluruh rangkaian kegiatan.</li>
-      </ul>
-
-      <p class="event-dialog__note">
-        Informasi lebih lengkap dapat dilihat melalui tautan
-        resmi kegiatan.
-      </p>
-    `,
-    image: "",
-    link: "https://www.instagram.com/diesnatalis.himtika/",
-    featured: true
-  },
-  {
-    id: "evt-008",
-    title: "Dies Natalis HIMTIKA IX",
-    start: "2026-08-26T08:00:00",
-    end: "2026-08-26T20:00:00",
-    timeLabel: "",
+    start: "2026-10-18T08:00:00",
+    end: "2026-10-18T23:59:00",
+    timeLabel: "selesai",
     category: "himtika",
     organizer: "HIMTIKA UNSIKA",
-    location: "soon",
+    location: "Coming soon",
     description: "Rangkaian acara untuk memperingati hari lahir HIMTIKA ke-9 dalam rangka mempererat silaturahmi seluruh mahasiswa Informatika.",
-    dialogContent: `
-      <p>
-        IT Bootcamp merupakan kegiatan pengenalan lingkungan
-        Informatika UNSIKA untuk mengembangkan kemampuan teknis,
-        kemampuan interpersonal, dan kebersamaan mahasiswa.
-      </p>
-
-      <h3>Informasi Kegiatan</h3>
-
-      <ul>
-        <li>Peserta wajib hadir tepat waktu.</li>
-        <li>Membawa perlengkapan yang telah ditentukan.</li>
-        <li>Mengikuti seluruh rangkaian kegiatan.</li>
-      </ul>
-
-      <p class="event-dialog__note">
-        Informasi lebih lengkap dapat dilihat melalui tautan
-        resmi kegiatan.
-      </p>
-    `,
+    dialogContent: ``,
     image: "",
     link: "https://www.instagram.com/diesnatalis.himtika/",
     featured: true

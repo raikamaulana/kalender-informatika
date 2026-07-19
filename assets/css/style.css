@@ -1121,6 +1121,7 @@ img, svg {
 .calendar-section {
     position: relative;
     padding-block: 64px;
+    transition: all 0.5s ease-in-out;
 }
 .upcoming-section ::selection ,
 .calendar-section ::selection {

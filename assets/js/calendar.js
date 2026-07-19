@@ -313,7 +313,7 @@
         if (dateDifference !== 0) return dateDifference;
 
         return Number(second.featured) - Number(first.featured);
-      });
+      }).slice(0, 4);
 
     elements.upcomingEvents.replaceChildren();
     elements.upcomingEmpty.hidden = upcoming.length > 0;
