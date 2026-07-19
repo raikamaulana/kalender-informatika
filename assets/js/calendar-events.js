@@ -62,8 +62,8 @@ const calendarEvents = Object.freeze([
   {
     id: "evt-003",
     title: "Hi-Link: HGTC (HIMTIKA Goes To Company)",
-    start: "2026-07-03T06:00:00",
-    end: "2026-07-03T20:30:00",
+    start: "2026-07-19T06:00:00",
+    end: "2026-07-19T20:30:00",
     category: "himtika",
     organizer: "HIMTIKA UNSIKA",
     location: "T. kumpul: Rektorat",

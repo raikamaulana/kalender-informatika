@@ -548,14 +548,16 @@
         font-size: 16px;
     }
     .date-badge {
-        width: 46px;
-        min-height: 48px;
+        width: 42px;
+        min-height: 42px;
     }
     .date-badge strong {
         font-size: 16px;
     }
     .date-badge span {
-        margin-top: 4px;
+        margin-top: 2px;
+        font-size: 10px;
+        font-weight: 600;
     }
     .month-empty-state {
         font-size: 13px;
@@ -885,17 +887,14 @@
         padding-bottom: 8px;
     }
     .hero-badge {
-        padding-left: 20px;
-        padding-right: 20px;
-        padding-top: 8px;
-        padding-bottom: 8px;
+        padding-left: 16px;
+        padding-right: 16px;
+        padding-top: 7px;
+        padding-bottom: 7px;
     }
     .hero-badge-icon {
-        width: 20px;
-        height: 20px;
-    }
-    .hero-badge-title {
-        font-size: 14px;
+        width: 16px;
+        height: 16px;
     }
     .hero-title {
         font-size: 40px;
@@ -911,6 +910,9 @@
     /* START KALENDER SECTION */
     .section-heading h2 {
         font-size: 36px;
+    }
+    .section-eyebrow {
+        font-size: 13px;
     }
     .upcoming-section,
     .calendar-section {
@@ -983,6 +985,19 @@
     }
     .hero-title {
         font-size: 60px;
+    }
+    .hero-badge {
+        padding-left: 20px;
+        padding-right: 20px;
+        padding-top: 8px;
+        padding-bottom: 8px;
+    }
+    .hero-badge-title {
+        font-size: 14px;
+    }
+    .hero-badge-icon {
+        width: 20px;
+        height: 20px;
     }
     .hero-description {
         font-size: 18px;

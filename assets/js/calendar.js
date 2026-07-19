@@ -37,15 +37,14 @@
     elements.calendarNext = document.getElementById("calendarNext");
     elements.calendarToday = document.getElementById("calendarToday");
     elements.calendarCurrentTitle = document.getElementById("calendarCurrentTitle");
-    elements.monthEmptyState = document.getElementById("monthEmptyState");
 
     elements.upcomingEvents = document.getElementById("upcomingEvents");
     elements.upcomingEmpty = document.getElementById("upcomingEmpty");
     elements.upcomingPrevious = document.getElementById("upcomingPrevious");
     elements.upcomingNext = document.getElementById("upcomingNext");
 
+    elements.agendaPanelEyebrow = document.getElementById("eyebrow");
     elements.agendaPanelTitle = document.getElementById("agenda-panel-title");
-    // elements.agendaPanelRange = document.getElementById("agendaPanelRange");
     elements.agendaPanelList = document.getElementById("agendaPanelList");
     elements.agendaPanelEmpty = document.getElementById("agendaPanelEmpty");
 
@@ -86,12 +85,30 @@
       events: fullCalendarEvents,
 
       datesSet(info) {
-        elements.calendarCurrentTitle.textContent = formatMonthYear(info.view.currentStart);
-        state.activeRangeStart = startOfWeek(new Date(), 1);
-        state.activeRangeEnd = addDays(state.activeRangeStart, 7);
+        const activeMonth = startOfDay(info.view.currentStart);
+        const today = startOfDay(new Date());
+
+        elements.calendarCurrentTitle.textContent =
+          formatMonthYear(activeMonth);
+
         state.selectedDate = null;
-        updateMonthEmptyState(info.view.currentStart);
-        renderAgendaPanelForCurrentWeek();
+        clearSelectedDayHighlight();
+        if (isSameMonth(activeMonth, today)) {
+          state.selectedDate = today;
+          renderAgendaPanelForDate(today);
+          requestAnimationFrame(() => {
+            const todayCell = elements.calendar.querySelector(
+              `[data-date="${toDateKey(today)}"]`
+            );
+
+            if (todayCell) {
+              setSelectedDayHighlight(todayCell);
+            }
+          });
+          return;
+        }
+
+        renderAgendaPanelForMonth(activeMonth);
       },
 
       dateClick(info) {
@@ -395,55 +412,138 @@
     if (eventData) openEventDialog(eventData, trigger);
   }
 
-  function renderAgendaPanelForCurrentWeek() {
-    const currentDate = new Date();
-    const weekStart = startOfWeek(currentDate, 1);
-    const weekEnd = addDays(weekStart, 7);
+  function renderAgendaPanelForMonth(monthDate) {
+    const monthStart = new Date(
+      monthDate.getFullYear(),
+      monthDate.getMonth(),
+      1
+    );
 
-    state.activeRangeStart = weekStart;
-    state.activeRangeEnd = weekEnd;
-    elements.agendaPanelTitle.textContent = "Agenda Minggu Ini";
-    // elements.agendaPanelRange.textContent = formatDateRange(weekStart, addDays(weekEnd, -1));
+    const monthEnd = new Date(
+      monthDate.getFullYear(),
+      monthDate.getMonth() + 1,
+      1
+    );
 
-    const events = getEventsInRange(weekStart, weekEnd);
-    renderAgendaPanelItems(events);
+    state.activeRangeStart = monthStart;
+    state.activeRangeEnd = monthEnd;
+
+    const monthEvents = getEventsInRange(monthStart, monthEnd);
+    const monthYear = formatMonthYear(monthStart);
+
+    elements.agendaPanelEyebrow.textContent = "AGENDA";
+    elements.agendaPanelTitle.textContent =
+      `Agenda ${monthYear}`;
+
+    elements.agendaPanelList.replaceChildren();
+
+    if (monthEvents.length > 0) {
+      elements.agendaPanelEmpty.textContent =
+        `Terdapat ${monthEvents.length} agenda pada bulan ${monthYear}. Pilih tanggal pada kalender untuk melihat detail agendanya.`;
+    } else {
+      elements.agendaPanelEmpty.textContent =
+        `Belum ada agenda yang dipublikasikan untuk bulan ${monthYear}.`;
+    }
+
+    elements.agendaPanelEmpty.hidden = false;
   }
 
   function renderAgendaPanelForDate(date) {
     const dayStart = startOfDay(date);
     const dayEnd = addDays(dayStart, 1);
+    const today = startOfDay(new Date());
 
     state.activeRangeStart = dayStart;
     state.activeRangeEnd = dayEnd;
-    elements.agendaPanelTitle.textContent = formatWeekdayDate(date);
-    // elements.agendaPanelRange.textContent = formatDate(date);
 
+    const isToday = isSameDay(dayStart, today);
     const events = getEventsInRange(dayStart, dayEnd);
-    renderAgendaPanelItems(events);
+
+    elements.agendaPanelEyebrow.textContent =
+      isToday ? "AGENDA HARI INI" : "AGENDA";
+
+    elements.agendaPanelTitle.textContent =
+      capitalizeFirst(formatWeekdayDate(dayStart));
+
+    const emptyMessage = isToday
+      ? "Belum ada agenda yang dipublikasikan untuk hari ini."
+      : `Belum ada agenda yang dipublikasikan untuk tanggal tersebut.`;
+      // : `Belum ada agenda yang dipublikasikan untuk ${formatDate(dayStart)}.`;
+
+    renderAgendaPanelItems(events, emptyMessage);
   }
 
-  function renderAgendaPanelItems(events) {
+  function renderAgendaPanelItems(
+    events,
+    emptyMessage = "Belum ada agenda yang dipublikasikan untuk tanggal tersebut."
+  ) {
+    // elements.agendaPanelList.replaceChildren();
+    // elements.agendaPanelEmpty.hidden = events.length > 0;
+
+    // events.forEach((event) => {
+    //   const category = getCategory(event.category);
+    //   const start = parseDateInput(event.start);
+    //   const item = document.createElement("button");
+    //   item.type = "button";
+    //   item.className = "agenda-item";
+    //   item.dataset.eventId = event.id;
+    //   item.innerHTML = `
+    //     <time class="date-badge date-badge--compact" datetime="${escapeHtml(event.start)}">
+    //       <strong>${formatDayNumber(start)}</strong>
+    //       <span>${formatShortMonth(start)}</span>
+    //     </time>
+    //     <span class="agenda-item__content">
+    //       <strong>${escapeHtml(event.title)}</strong>
+    //       <small>${escapeHtml(formatTimeRange(event.start, event.end))}</small>
+    //       <small>${escapeHtml(event.location)}</small>
+    //     </span>
+    //     <span class="event-category-badge" style="--category-color:${category.color}">${escapeHtml(category.label)}</span>`;
+    //   elements.agendaPanelList.appendChild(item);
+    // });
+
     elements.agendaPanelList.replaceChildren();
-    elements.agendaPanelEmpty.hidden = events.length > 0;
+
+    if (!events.length) {
+      elements.agendaPanelEmpty.textContent = emptyMessage;
+      elements.agendaPanelEmpty.hidden = false;
+      return;
+    }
+
+    elements.agendaPanelEmpty.textContent = "";
+    elements.agendaPanelEmpty.hidden = true;
 
     events.forEach((event) => {
       const category = getCategory(event.category);
       const start = parseDateInput(event.start);
       const item = document.createElement("button");
+
       item.type = "button";
       item.className = "agenda-item";
       item.dataset.eventId = event.id;
+
       item.innerHTML = `
-        <time class="date-badge date-badge--compact" datetime="${escapeHtml(event.start)}">
+        <time
+          class="date-badge date-badge--compact"
+          datetime="${escapeHtml(event.start)}"
+        >
           <strong>${formatDayNumber(start)}</strong>
           <span>${formatShortMonth(start)}</span>
         </time>
+
         <span class="agenda-item__content">
           <strong>${escapeHtml(event.title)}</strong>
           <small>${escapeHtml(formatTimeRange(event.start, event.end))}</small>
           <small>${escapeHtml(event.location)}</small>
         </span>
-        <span class="event-category-badge" style="--category-color:${category.color}">${escapeHtml(category.label)}</span>`;
+
+        <span
+          class="event-category-badge"
+          style="--category-color:${category.color}"
+        >
+          ${escapeHtml(category.label)}
+        </span>
+      `;
+
       elements.agendaPanelList.appendChild(item);
     });
   }
@@ -458,12 +558,6 @@
       .sort((first, second) => parseDateInput(first.start) - parseDateInput(second.start));
   }
 
-  function updateMonthEmptyState(monthStart) {
-    const rangeStart = new Date(monthStart.getFullYear(), monthStart.getMonth(), 1);
-    const rangeEnd = new Date(monthStart.getFullYear(), monthStart.getMonth() + 1, 1);
-    elements.monthEmptyState.hidden = getEventsInRange(rangeStart, rangeEnd).length > 0;
-  }
-
   function renderMobileDots(dayElement, date) {
     const existingDots = dayElement.querySelector(".mobile-day-dots");
     if (existingDots) existingDots.remove();
@@ -476,7 +570,7 @@
     dots.className = "mobile-day-dots";
     dots.setAttribute("aria-hidden", "true");
 
-    [...new Set(dayEvents.map((event) => event.category))].slice(0, 4).forEach((categoryKey) => {
+    [...new Set(dayEvents.map((event) => event.category))].forEach((categoryKey) => {
       const dot = document.createElement("i");
       dot.style.setProperty("--event-color", getCategory(categoryKey).color);
       dots.appendChild(dot);
@@ -490,6 +584,14 @@
       element.classList.remove("is-selected-day");
     });
     dayElement.classList.add("is-selected-day");
+  }
+
+  function clearSelectedDayHighlight() {
+    elements.calendar
+      .querySelectorAll(".is-selected-day")
+      .forEach((element) => {
+        element.classList.remove("is-selected-day");
+      });
   }
 
   function openEventDialog(event, triggerElement) {
@@ -568,6 +670,27 @@
     const date = parseDateInput(dateInput);
     date.setHours(0, 0, 0, 0);
     return date;
+  }
+
+  function isSameDay(firstInput, secondInput) {
+    const first = startOfDay(firstInput);
+    const second = startOfDay(secondInput);
+
+    return (
+      first.getFullYear() === second.getFullYear() &&
+      first.getMonth() === second.getMonth() &&
+      first.getDate() === second.getDate()
+    );
+  }
+
+  function isSameMonth(firstInput, secondInput) {
+    const first = parseDateInput(firstInput);
+    const second = parseDateInput(secondInput);
+
+    return (
+      first.getFullYear() === second.getFullYear() &&
+      first.getMonth() === second.getMonth()
+    );
   }
 
   function startOfWeek(dateInput, firstDay) {

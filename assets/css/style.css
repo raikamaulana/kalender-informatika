@@ -1285,15 +1285,15 @@ img, svg {
 }
 
 .date-badge span {
-    margin-top: 2px;
+    margin-top: 1px;
     font-size: 9px;
     font-weight: 700;
 }
 
 .date-badge--compact {
-    width: 42px;
-    min-width: 42px;
-    min-height: 46px;
+    width: 36px;
+    min-width: 36px;
+    min-height: 38px;
 }
 
 .upcoming-card__details {
