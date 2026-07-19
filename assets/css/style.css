@@ -62,25 +62,6 @@ button {
     cursor: pointer;
 }
 
-/* button,
-a {
-    -webkit-tap-highlight-color: transparent;
-}
-
-button,
-input,
-textarea,
-select {
-    font: inherit;
-}
-
-button:focus-visible,
-a:focus-visible,
-[tabindex]:focus-visible {
-    outline: 3px solid rgba(214, 194, 106, 0.88);
-    outline-offset: 3px;
-} */
-
 img, svg {
     display: block;
     max-width: 100%;
@@ -89,6 +70,10 @@ img, svg {
 .margin-x-section {
 	padding-left: 24px;
 	padding-right: 24px;
+}
+.section-container {
+    max-width: 1600px;
+    margin-inline: auto;
 }
 .title-text-shadow {
     text-shadow: 3px 3px 1px #000040;
@@ -1112,11 +1097,6 @@ img, svg {
 /* END HERO SECTION */
 
 /* START KALENDER SECTION */
-.section-container {
-    width: min(100% - 32px, 1240px);
-    margin-inline: auto;
-}
-
 .upcoming-section,
 .calendar-section {
     position: relative;
