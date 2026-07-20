@@ -162,8 +162,8 @@ const calendarEvents = Object.freeze([
   {
     id: "evt-006",
     title: "IT Bootcamp",
-    start: "2026-09-03T06:00:00",
-    end: "2026-09-04T23:59:00",
+    start: "2026-10-03T06:00:00",
+    end: "2026-10-04T23:59:00",
     timeLabel: "selesai",
     category: "himtika",
     organizer: "HIMTIKA UNSIKA",
