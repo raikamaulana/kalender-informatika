@@ -131,21 +131,132 @@ const calendarEvents = Object.freeze([
   },
   {
     id: "evt-004",
-    title: "Pembukaan Study Club",
+    title: "Seminar Nasional Pekan IT",
+    start: "2026-08-09T08:00:00",
+    end: "2026-08-09T14:00:00",
+    timeLabel: "",
+    category: "himtika",
+    organizer: "HIMTIKA UNSIKA",
+    location: "Aula Husni Hamid Pemda Karawang",
+    description: "Seminar Nasional IT dengan tema manusia dan Artificial Intelligence beserta booth pameran IT.",
+    dialogContent: `
+      <h3>📢 [𝐒𝐄𝐌𝐈𝐍𝐀𝐑 𝐍𝐀𝐒𝐈𝐎𝐍𝐀𝐋 & 𝐏𝐀𝐌𝐄𝐑𝐀𝐍 𝐏𝐄𝐊𝐀𝐍 𝐈𝐓 𝟐𝟎𝟐𝟔] 📢</h3>
+      <p>Halo, Sobat Pekan IT! 👋</p>
+
+      <p>
+      Pendaftaran <strong>Seminar Nasional &amp; Pameran PEKAN IT 2026</strong> resmi dibuka! 🚀
+      </p>
+
+      <p>
+      Yuk, perluas wawasanmu mengenai kolaborasi antara manusia dan Artificial Intelligence bersama praktisi yang berpengalaman. Melalui seminar yang mengusung tema:
+      </p>
+
+      <p>
+      <strong><em>"𝐇𝐮𝐦𝐚𝐧 𝐚𝐧𝐝 𝐀𝐈 𝐂𝐨𝐥𝐥𝐚𝐛𝐨𝐫𝐚𝐭𝐢𝐨𝐧: 𝐅𝐫𝐨𝐦 𝐀𝐮𝐭𝐨𝐦𝐚𝐭𝐢𝐨𝐧 𝐭𝐨 𝐄𝐧𝐡𝐚𝐧𝐜𝐞𝐝 𝐂𝐚𝐩𝐚𝐛𝐢𝐥𝐢𝐭𝐢𝐞𝐬"</em></strong>
+      </p>
+
+      <p>
+      <strong>Kunjungi juga pameran inovasi teknologi yang menampilkan berbagai karya kreatif</strong>. Dapatkan insight terbaru, bangun relasi, dan jadilah bagian dari diskusi yang relevan dengan perkembangan teknologi.
+      </p>
+
+      <span><strong>✨ 𝐁𝐞𝐧𝐞𝐟𝐢𝐭:</strong></span><br>
+
+      <ul>
+          <li>📄 E-Certificate</li>
+          <li>🎓 20 Poin SKP</li>
+          <li>🤝 Networking &amp; Relasi</li>
+          <li>💡 Insight dari Praktisi</li>
+          <li>🖥️ Melihat Langsung Showcase Proyek IT</li>
+          <li>🎁 Doorprize Eksklusif untuk Peserta Terpilih</li>
+      </ul>
+
+      <p>
+      <strong>💵 HTM: </strong>
+      Rp20.000 <br>
+      
+      <strong>📅 Pelaksanaan: </strong>
+      Minggu, 9 Agustus 2026 <br>
+      
+      <strong>📍 Lokasi: </strong>
+      Aula Husni Hamid Pemda Karawang
+      </p>
+
+      <p>
+      <strong>📅 𝐏𝐞𝐧𝐝𝐚𝐟𝐭𝐚𝐫𝐚𝐧:</strong><br>
+      25 Juli – 5 Agustus 2026<br>
+      <strong>📝 𝐃𝐚𝐟𝐭𝐚𝐫 𝐬𝐞𝐤𝐚𝐫𝐚𝐧𝐠: </strong><br>
+      <a href="https://bit.ly/SeminarPekanIT" target="_blank">
+      https://bit.ly/SeminarPekanIT
+      </a>
+      </p>
+
+      <p>
+      <strong>📱 𝐂𝐨𝐧𝐭𝐚𝐜𝐭 𝐏𝐞𝐫𝐬𝐨𝐧: </strong><br>
+      Nanang :
+      <a href="https://wa.me/6283165298532" target="_blank">
+      https://wa.me/6283165298532
+      </a><br>
+      Zahwan :
+      <a href="https://wa.me/628812127615" target="_blank">
+      https://wa.me/628812127615
+      </a>
+      </p>
+
+      <p>
+      Mari bergabung dan ajak teman-temanmu untuk menjadi bagian dari Seminar Nasional &amp; Pameran PEKAN IT 2026! ✨
+      </p>
+      <p>
+      <strong>✨ 𝐂𝐨𝐦𝐩𝐢𝐥𝐞 𝐭𝐡𝐞 𝐕𝐢𝐬𝐢𝐨𝐧, 𝐄𝐱𝐞𝐜𝐮𝐭𝐞 𝐈𝐧𝐧𝐨𝐯𝐚𝐭𝐢𝐨𝐧 ✨</strong>
+      </p>
+      <p>
+        #PekanIT2026<br>
+        #HIMTIKA2026<br>
+        #KabinetSelaras<br>
+        #BersamaKitaJaya<br>
+        #FasilkomUnsika
+      </p>
+
+      <p class="event-dialog__note">
+        Informasi lebih lengkap dapat dilihat melalui tautan
+        resmi kegiatan.
+      </p>
+    `,
+    image: "./assets/images/events/bg-seminar-pekan-it.webp",
+    link: "https://www.instagram.com/pekanit_unsika/",
+    featured: true
+  },
+  {
+    id: "evt-005",
+    title: "CnC: Demonstrasi Project",
+    start: "2026-08-09T08:00:00",
+    end: "2026-08-09T23:59:00",
+    timeLabel: "selesai",
+    category: "himtika",
+    organizer: "HIMTIKA UNSIKA",
+    location: "Aula Husni Hamid Pemda Karawang",
+    description: "Project CnC yang sudah selesai dan siap untuk dipamerkan pada Seminar Pekan IT 2026 .",
+    dialogContent: ``,
+    image: "./assets/images/events/bg-cnc.webp",
+    link: "https://www.instagram.com/cnc_himtika/",
+    featured: true
+  },
+  {
+    id: "evt-006",
+    title: "Pelaksanaan Kelas Study Club",
     start: "2026-08-15T07:00:00",
     end: "2026-08-15T23:59:00",
     timeLabel: "selesai",
     category: "himtika",
     organizer: "HIMTIKA UNSIKA",
-    location: "Gd. Fasilkom",
-    description: "Kegiatan belajar bersama mhs informatika bersama para mentor ahli di tiap kelas yang disediakan.",
+    location: "Hybrid (Gmeet/Offline)",
+    description: "Pelaksanaan kelas Study Club HIMTIKA bersama para mentor ahli di kelas Web Dev., UI/UX Design, & Data Science tiap minggu hingga tanggal 25 Oktober 2026.",
     dialogContent: ``,
     image: "./assets/images/events/bg-study-club.webp",
     link: "https://www.instagram.com/studyclub_id/",
     featured: true
   },
   {
-    id: "evt-005",
+    id: "evt-007",
     title: "LKMM-PD",
     start: "2026-08-26T06:00:00",
     end: "2026-08-26T16:00:00",
@@ -160,7 +271,7 @@ const calendarEvents = Object.freeze([
     featured: false
   },
   {
-    id: "evt-006",
+    id: "evt-008",
     title: "IT Bootcamp",
     start: "2026-10-03T06:00:00",
     end: "2026-10-04T23:59:00",
@@ -194,7 +305,7 @@ const calendarEvents = Object.freeze([
     featured: false
   },
   {
-    id: "evt-007",
+    id: "evt-009",
     title: "Dies Natalis HIMTIKA IX",
     start: "2026-10-18T08:00:00",
     end: "2026-10-18T23:59:00",
@@ -206,6 +317,21 @@ const calendarEvents = Object.freeze([
     dialogContent: ``,
     image: "",
     link: "https://www.instagram.com/diesnatalis.himtika/",
+    featured: true
+  },
+  {
+    id: "evt-010",
+    title: "Penutupan Pelaksanaan Study Club",
+    start: "2026-10-25T08:00:00",
+    end: "2026-10-25T23:59:00",
+    timeLabel: "selesai",
+    category: "himtika",
+    organizer: "HIMTIKA UNSIKA",
+    location: "Coming soon",
+    description: "Kelas Terakhir sekaligus penutupan dari kegiatan Study Club HIMTIKA.",
+    dialogContent: ``,
+    image: "",
+    link: "https://www.instagram.com/studyclub_id/",
     featured: true
   }
 ]);
