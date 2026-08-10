@@ -56,7 +56,7 @@ const calendarEvents = Object.freeze([
     end: "2026-05-13T12:00:00",
     timeLabel: "",
     category: "himtika",
-    organizer: "HIMTIKA UNSIKA",
+    organizer: "HIMTIKA Unsika",
     location: "Gd. Fasilkom",
     description: "Kompetisi bagi Mahasiswa Informatika Unsika untuk menunjukkan bakat dan keahlian hard kill",
     dialogContent: ``,
@@ -71,7 +71,7 @@ const calendarEvents = Object.freeze([
     end: "2026-05-16T20:00:00",
     timeLabel: "",
     category: "himtika",
-    organizer: "HIMTIKA UNSIKA",
+    organizer: "HIMTIKA Unsika",
     location: "T. kumpul: Depan Aula Syekh Quro",
     description: "Kegiatan untuk menjalin relasi serta mendapatkan ilmu dengan himpunan universitas lain. Studi banding tahun ini dengan HMIF UPNVJ.",
     dialogContent: ``,
@@ -86,7 +86,7 @@ const calendarEvents = Object.freeze([
     end: "2026-07-03T20:30:00",
     timeLabel: "",
     category: "himtika",
-    organizer: "HIMTIKA UNSIKA",
+    organizer: "HIMTIKA Unsika",
     location: "T. kumpul: Depan Aula Syekh Quro Unsika",
     description: "Kunjungan industri ke Hacktiv8 dan BLU by BCA Digital.",
     dialogContent: `
@@ -136,7 +136,7 @@ const calendarEvents = Object.freeze([
     end: "2026-08-09T14:00:00",
     timeLabel: "",
     category: "himtika",
-    organizer: "HIMTIKA UNSIKA",
+    organizer: "HIMTIKA Unsika",
     location: "Aula Husni Hamid Pemda Karawang",
     description: "Seminar Nasional IT dengan tema manusia dan Artificial Intelligence beserta booth pameran IT.",
     dialogContent: `
@@ -228,26 +228,164 @@ const calendarEvents = Object.freeze([
   {
     id: "evt-005",
     title: "CnC: Demonstrasi Project",
-    start: "2026-08-09T08:00:00",
-    end: "2026-08-09T23:59:00",
-    timeLabel: "selesai",
+    start: "2026-08-09T13:00:00",
+    end: "2026-08-09T14:00:00",
+    timeLabel: "",
     category: "himtika",
-    organizer: "HIMTIKA UNSIKA",
+    organizer: "HIMTIKA Unsika",
     location: "Aula Husni Hamid Pemda Karawang",
-    description: "Project CnC yang sudah selesai dan siap untuk dipamerkan pada Seminar Pekan IT 2026 .",
+    description: "Project CnC yang sudah selesai dan siap untuk dipamerkan pada Seminar Pekan IT 2026.",
     dialogContent: ``,
     image: "./assets/images/events/bg-cnc.webp",
     link: "https://www.instagram.com/cnc_himtika/",
-    featured: true
+    featured: false
   },
   {
     id: "evt-006",
+    title: "Pre-order PDH Anggota HIMTIKA",
+    start: "2026-08-09T00:00:01",
+    end: "2026-08-15T23:59:59",
+    timeLabel: "",
+    category: "himtika",
+    organizer: "HIMTIKA Unsika",
+    location: "Google Form",
+    description: "",
+    dialogContent: `
+      <h3>📢 [ 𝐎𝐏𝐄𝐍 𝐏𝐑𝐄-𝐎𝐑𝐃𝐄𝐑 𝐏𝐃𝐇 𝐀𝐍𝐆𝐆𝐎𝐓𝐀 𝐇𝐈𝐌𝐓𝐈𝐊𝐀 ] 📢</h3>
+      <p>Halo Mahasiswa Baru Informatika UNSIKA 2026! 👋 </p>
+
+      <p>
+      Saatnya melengkapi identitasmu sebagai bagian dari HIMTIKA dengan melakukan Pre-Order PDH Anggota HIMTIKA.
+      </p>
+
+      <p>
+      PDH bukan hanya sekadar seragam, tetapi juga menjadi simbol kebersamaan, kekompakan, dan semangat bertumbuh bersama selama menjalani perjalanan di Informatika. ✨
+      </p>
+
+      <p>
+        <span><strong>📆 Periode Pre-Order:</strong></span><br>
+        <span>9-15 Agustus 2026</span><br>
+        <span><strong>💸 Harga:</strong></span><br>
+        <span>Rp150.000</span><br>
+        <span><strong>💳 DP 50% (Rp75.000)</strong></span><br>
+      </p>
+
+      <p>
+        <strong>📎 Link Pemesanan:</strong><br>
+        <a href="https://bit.ly/PRE-ORDERPDHANGGOTA" target="_blank">
+        https://bit.ly/PRE-ORDERPDHANGGOTA 
+        </a><br>
+      </p>
+      
+      <span><strong>📍 Pembayaran dapat dilakukan melalui:</strong></span>
+      <ul>
+        <li>Dana: 085714901222 (a.n. Luckyta Rizqia Jubaedi)</li>
+        <li>Seabank: 901014645610 (a.n. Luckyta Rizqia Jubaedi)</li>
+        <li>Cash (Konfirmasi terlebih dahulu ke Luckyta (<a href="https://wa.me/6285780442228" target="_blank">https://wa.me/6285780442228</a>)</li>
+      </ul>
+      
+      <p>
+      <strong>📲 Informasi lebih lanjut bisa menghubungi</strong><br>
+      <span>📞 <a href="https://wa.me/6285780442228" target="_blank">
+      https://wa.me/6285780442228</a> (Luckyta Rizqia Jubaedi)</span><br>
+      <span>📞 <a href="https://wa.me/6285210535495" target="_blank">
+      https://wa.me/6285210535495</a> (Marsello Hotasi Marpaung)</span>
+      </p>
+
+      <p>
+        #ITBootcamp2026<br>
+        #HIMTIKA2026<br>
+        #BersamaKitaJaya<br>
+        #KabinetSelaras<br>
+        #FasilkomUnsika<br>
+        #PDHAnggota
+      </p>
+
+      <p class="event-dialog__note">
+        Informasi lebih lengkap dapat dilihat melalui tautan di bawah ini.
+      </p>
+    `,
+    image: "./assets/images/events/bg-pdh-anggota.webp",
+    link: "https://bit.ly/PRE-ORDERPDHANGGOTA",
+    featured: true
+  },
+  {
+    id: "evt-007",
+    title: "Sosialisasi LKMM-PD",
+    start: "2026-08-13T19:00:00",
+    end: "2026-08-13T23:59:00",
+    timeLabel: "selesai",
+    category: "himtika",
+    organizer: "HIMTIKA Unsika",
+    location: "Zoom Meeting",
+    description: "",
+    dialogContent: ``,
+    image: "",
+    link: "https://www.instagram.com/himtika_unsika/",
+    featured: true
+  },
+  {
+    id: "evt-008",
+    title: "Keputrian X Kenali",
+    start: "2026-08-14T15:00:00",
+    end: "2026-08-14T23:59:00",
+    timeLabel: "selesai",
+    category: "bem",
+    organizer: "BEM Fasilkom Unsika",
+    location: "Gedung Vaksin",
+    description: "Sarana atau wadah untuk menambah wawasan ilmu pengetahuan, keterampilan, dan pemahaman bagi mahasiswi Fasilkom Unsika.",
+    dialogContent: `
+      <h3>[𝐊𝐄𝐏𝐔𝐓𝐑𝐈𝐀𝐍 𝐗 𝐊𝐄𝐍𝐀𝐋𝐈🌷✨]</h3>
+
+      <p>Halo Fasilkomers! 👋</p>
+
+      <p>Mahasiswi baru 2026, siap kenal lebih dekat dengan diri sendiri dan lingkungan baru di Fasilkom? 💗</p>
+
+      <p>
+      Yuk, ikuti kegiatan:<br>
+      <strong>✨ Keputrian X Kenali ✨</strong>
+      </p>
+
+      <p>
+      Kegiatan ini hadir sebagai ruang untuk mengenal lebih dekat, berbagi pengalaman, dan membangun langkah awal yang positif sebagai bagian dari keluarga Fasilkom! 🌸
+      </p>
+
+      <span><strong>Catat jadwalnya, jangan sampai kelewatan:</strong></span><br>
+
+      <p>
+      <span>🗓️ Jum’at, 14 Agustus 2026</span><br>
+      <span>⏰ 15.00 WIB – selesai</span><br>
+      <span>📍 Gedung Vaksin</span>
+      </p>
+
+      <p>
+      <strong>📌 Wajib diikuti oleh seluruh mahasiswi baru Fasilkom angkatan 2026.</strong>
+      </p>
+      <p>
+      Jangan lewatkan kesempatan untuk bertemu, berkenalan, dan memulai perjalanan baru bersama! 💫
+      </p>
+      <p>
+      Sampai ketemu di Keputrian X Kenali! 🫶🏻
+      </p>
+      <p>
+        #Keputrian2026<br>
+        #BEMFasilkomUnsika<br>
+        #KabinetSahitya<br>
+        #TogetherMovingForward
+      </p>
+    `,
+    image: "./assets/images/events/bg-keputrian-x-kenali.webp",
+    link: "https://www.instagram.com/bemfasilkomunsika/",
+    featured: true
+  },
+  {
+    id: "evt-009",
     title: "Pelaksanaan Kelas Study Club",
     start: "2026-08-15T07:00:00",
     end: "2026-08-15T23:59:00",
     timeLabel: "selesai",
     category: "himtika",
-    organizer: "HIMTIKA UNSIKA",
+    organizer: "HIMTIKA Unsika",
     location: "Hybrid (Gmeet/Offline)",
     description: "Pelaksanaan kelas Study Club HIMTIKA bersama para mentor ahli di kelas Web Dev., UI/UX Design, & Data Science tiap minggu hingga tanggal 25 Oktober 2026.",
     dialogContent: ``,
@@ -256,28 +394,43 @@ const calendarEvents = Object.freeze([
     featured: true
   },
   {
-    id: "evt-007",
+    id: "evt-010",
     title: "LKMM-PD",
     start: "2026-08-26T06:00:00",
     end: "2026-08-26T16:00:00",
     timeLabel: "",
     category: "himtika",
-    organizer: "HIMTIKA UNSIKA",
+    organizer: "HIMTIKA Unsika",
     location: "Aula Syekh Quro Unsika",
     description: "Latihan Kepemimpinan dan Manajemen Mahasiswa untuk mahasiswa baru Informatika 2026",
     dialogContent: ``,
     image: "",
     link: "https://www.instagram.com/himtika_unsika/",
-    featured: false
+    featured: true
   },
   {
-    id: "evt-008",
+    id: "evt-011",
+    title: "LKMM X Inaugurasi",
+    start: "2026-09-19T06:00:00",
+    end: "2026-09-20T23:59:00",
+    timeLabel: "selesai",
+    category: "bem",
+    organizer: "BEM Fasilkom Unsika",
+    location: "coming soon",
+    description: "Program pembinaan dan pengenalan mahasiswa baru Fasilkom Unsika angkatan 2026 yang bertujuan membekali pengetahuan, keterampilan, dan sikap dalam manajemen organisasi sekaligus menumbuhkan rasa kekeluargaan, kebersamaan, dan keakraban antar mahasiswa dalam lingkungan Fasilkom.",
+    dialogContent: ``,
+    image: "",
+    link: "https://www.instagram.com/bemfasilkomunsika/",
+    featured: true
+  },
+  {
+    id: "evt-012",
     title: "IT Bootcamp",
     start: "2026-10-03T06:00:00",
     end: "2026-10-04T23:59:00",
     timeLabel: "selesai",
     category: "himtika",
-    organizer: "HIMTIKA UNSIKA",
+    organizer: "HIMTIKA Unsika",
     location: "Coming soon",
     description: "Kegiatan pengenalan lingkungan Informatika Unsika untuk mengembangkan hardskill dan softskill serta membanung kebersamaan antarmahasiswa baru.",
     dialogContent: `
@@ -302,16 +455,16 @@ const calendarEvents = Object.freeze([
     `,
     image: "",
     link: "https://www.instagram.com/himtika_unsika/",
-    featured: false
+    featured: true
   },
   {
-    id: "evt-009",
+    id: "evt-013",
     title: "Dies Natalis HIMTIKA IX",
     start: "2026-10-18T08:00:00",
     end: "2026-10-18T23:59:00",
     timeLabel: "selesai",
     category: "himtika",
-    organizer: "HIMTIKA UNSIKA",
+    organizer: "HIMTIKA Unsika",
     location: "Coming soon",
     description: "Rangkaian acara untuk memperingati hari lahir HIMTIKA ke-9 dalam rangka mempererat silaturahmi seluruh mahasiswa Informatika.",
     dialogContent: ``,
@@ -320,13 +473,13 @@ const calendarEvents = Object.freeze([
     featured: true
   },
   {
-    id: "evt-010",
+    id: "evt-014",
     title: "Penutupan Pelaksanaan Study Club",
     start: "2026-10-25T08:00:00",
     end: "2026-10-25T23:59:00",
     timeLabel: "selesai",
     category: "himtika",
-    organizer: "HIMTIKA UNSIKA",
+    organizer: "HIMTIKA Unsika",
     location: "Coming soon",
     description: "Kelas Terakhir sekaligus penutupan dari kegiatan Study Club HIMTIKA.",
     dialogContent: ``,

@@ -540,7 +540,7 @@
 
         <span class="agenda-item__content">
           <strong>${escapeHtml(event.title)}</strong>
-          <small>${escapeHtml(formatTimeRange(event.start, event.end))}</small>
+          <small>${escapeHtml(formatAgendaTimeRange(event))}</small>
           <small>${escapeHtml(event.location)}</small>
         </span>
 
@@ -860,6 +860,22 @@
     const startText = formatTime(startInput);
     if (!endInput) return `${startText} WIB`;
     const endText = formatTime(endInput);
+    return `${startText}–${endText} WIB`;
+  }
+
+  function formatAgendaTimeRange(event) {
+    const startText = formatTime(event.start);
+
+    const customEndLabel =
+        typeof event.timeLabel === "string"
+            ? event.timeLabel.trim()
+            : "";
+
+    if (customEndLabel) { return `${startText} WIB–${customEndLabel}`; }
+    if (!event.end) { return `${startText} WIB`; }
+
+    const endText = formatTime(event.end);
+
     return `${startText}–${endText} WIB`;
   }
 
