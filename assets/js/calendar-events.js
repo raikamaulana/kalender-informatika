@@ -311,7 +311,7 @@ const calendarEvents = Object.freeze([
   },
   {
     id: "evt-007",
-    title: "Sosialisasi LKMM-PD",
+    title: "Sosialisasi LKMM Pra-Dasar 2026",
     start: "2026-08-13T19:00:00",
     end: "2026-08-13T23:59:00",
     timeLabel: "selesai",
@@ -319,8 +319,49 @@ const calendarEvents = Object.freeze([
     organizer: "HIMTIKA Unsika",
     location: "Zoom Meeting",
     description: "",
-    dialogContent: ``,
-    image: "",
+    dialogContent: `
+      <h3><strong>[📢 𝐒𝐎𝐒𝐈𝐀𝐋𝐈𝐒𝐀𝐒𝐈 𝐋𝐊𝐌𝐌 𝐏𝐑𝐀-𝐃𝐀𝐒𝐀𝐑 𝟐𝟎𝟐𝟔]</strong></h3>
+
+      <p>Hello Sobat Informatics 2026! 👋🏻</p>
+
+      <p>Sebagai mahasiswa Informatika, berkembang bukan hanya tentang belajar di dalam kelas. Pengalaman, kerja sama, dan keberanian untuk mengambil peran juga menjadi bagian dari proses kita. ✨</p>
+
+      <p>Nah, untuk mengenal lebih dekat LKMM-PD 2026, yuk ikuti Sosialisasinya! Kamu bisa mendapatkan informasi mengenai rangkaian kegiatan, tujuan, serta hal-hal yang perlu dipersiapkan.</p>
+
+      <p>
+      Dengan Tema:<br>
+      <strong><em>✨ “𝐌𝐞𝐦𝐛𝐞𝐧𝐭𝐮𝐤 𝐉𝐢𝐰𝐚 𝐊𝐞𝐩𝐞𝐦𝐢𝐦𝐩𝐢𝐧𝐚𝐧 𝐌𝐚𝐡𝐚𝐬𝐢𝐬𝐰𝐚 𝐈𝐧𝐟𝐨𝐫𝐦𝐚𝐭𝐢𝐤𝐚 𝐲𝐚𝐧𝐠 𝐁𝐞𝐫𝐢𝐧𝐭𝐞𝐠𝐫𝐢𝐭𝐚𝐬, 𝐀𝐝𝐚𝐩𝐭𝐢𝐟, 𝐝𝐚𝐧 𝐏𝐫𝐨𝐟𝐞𝐬𝐢𝐨𝐧𝐚𝐥 𝐝𝐢 𝐄𝐫𝐚 𝐃𝐢𝐠𝐢𝐭𝐚𝐥” ✨</em></strong>
+      </p>
+
+      <p>
+      <span><strong>🗓️ Kamis, 13 Agustus 2026</strong></span><br>
+      <span><strong>⏰ 19.00 WIB – selesai</strong></span><br>
+      <span><strong>👔 Baju bebas & sopan</strong></span><br>
+      <span><strong>📍  Zoom Meeting</strong></span><br>
+      <span><strong>🔗 Link menyusul</strong></span>
+      </p>
+
+      <p>
+      Jangan sampai ketinggalan! Mari bersama-sama berkembang, berproses, dan mempersiapkan diri menjadi mahasiswa yang lebih baik. 💙
+      </p>
+
+      <p>
+      <strong>📞 CP:</strong><br>
+      <span><strong>Kayla — </strong><a href="https://wa.me/6285779321250" target="_blank">
+      https://wa.me/6285779321250</a></span><br>
+      <span><strong>Bintang — </strong><a href="https://wa.me/6282190158256" target="_blank">
+      https://wa.me/6282190158256</a></span>
+      </p>
+
+      <p>
+        #LKMMPD2026<br>
+        #HIMTIKA2026<br>
+        #BersamaKitaJaya<br>
+        #KabinetSelaras<br>
+        #FasilkomUnsika
+      </p>
+    `,
+    image: "./assets/images/events/bg-sosialisasi-lkmmpd.webp",
     link: "https://www.instagram.com/himtika_unsika/",
     featured: true
   },
