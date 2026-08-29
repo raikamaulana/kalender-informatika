@@ -1963,7 +1963,8 @@ img, svg {
     text-decoration: underline;
     text-underline-offset: 3px;
 }
-.event-dialog__custom-content strong {
+.event-dialog__custom-content strong,
+.event-dialog__custom-content b {
     color: var(--text);
 }
 .event-dialog__note {

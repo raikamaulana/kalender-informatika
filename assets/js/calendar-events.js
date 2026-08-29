@@ -421,6 +421,126 @@ const calendarEvents = Object.freeze([
   },
   {
     id: "evt-009",
+    title: "Sosialisasi Dies Natalis HIMTIKA IX Championship",
+    start: "2026-08-24T19:00:00",
+    end: "2026-08-24T23:59:00",
+    timeLabel: "selesai",
+    category: "himtika",
+    organizer: "HIMTIKA Unsika",
+    location: "Zoom Meeting",
+    description: "",
+    dialogContent: `
+      <h3><strong>🌊 [SOSIALISASI DIES NATALIS HIMTIKA IX CHAMPIONSHIP] 🌊</strong></h3><br>
+
+      <p>Halo, Future Sailors! ⚓🌊</p>
+
+      <p>Sebuah perjalanan baru akan segera dimulai! Dalam rangka menyambut <b>Dies Natalis HIMTIKA ke-9</b>, kami mengajak seluruh Future Sailors untuk bersama-sama mengenal lebih dalam rangkaian perjalanan yang telah dipersiapkan. 🧭✨</p>
+
+      <p>
+      Penasaran dengan apa saja yang akan hadir dan bagaimana kalian bisa menjadi bagian dari perjalanan ini? 👀
+      </p>
+
+      <p>
+      Jangan khawatir, kami akan membuka peta perjalanan melalui <strong>Sosialisasi Dies Natalis HIMTIKA IX Championship! 🌊⚓</strong> Sosialisasi ini akan membahas berbagai informasi penting seputar rangkaian acara Dies Natalis HIMTIKA IX.
+      </p>
+      
+      <span><strong>Catat jadwalnya, ya! 📌</strong></span><br>
+      <p><strong>
+      <span>🗓️ Senin, 24 Agustus 2026</span><br>
+      <span>⏰ 19.00 WIB – Selesai</span><br>
+      <span>📍 Zoom Meeting: <br>(<a href="https://us06web.zoom.us/j/81453051465">https://us06web.zoom.us/j/81453051465</a>)</span><br><br>
+      <span>🖼️ Virtual Background: <br>(<a href="https://drive.google.com/file/d/1zxBGbYHQR8g_g9wd4vfLSbtM8hcERC64/view?usp=drive_link">https://drive.google.com/file/d/1zxBGbYHQR8g_g9wd4vfLSbtM8hcERC64/view?usp=drive_link</a>)</span><br><br>
+      <span>📖 Guidebook: <br>(<a href="https://canva.link/su6vetss7tf06xn">https://canva.link/su6vetss7tf06xn</a>)</span><br><br>
+      <span>💬 Contact Person: <br>Wisnu - (<a href="https://wa.me/qr/S4PCW4F4AWKMG1">https://wa.me/qr/S4PCW4F4AWKMG1</a>)</span><br><br>
+      </strong></p>
+
+      <p>
+      📱 Ikuti informasi terbaru di Instagram:<br>
+      <span><a href="https://www.instagram.com/himtika_unsika/">@himtika_unsika</a></span><br>
+      <span><a href="https://www.instagram.com/diesnatalis.himtika/">@diesnatalis.himtika</a></span>
+      </p>
+      <p>
+      Mari berlayar dan selami perjalanan Dies Natalis HIMTIKA IX bersama! 🌊✨
+      </p>
+      <p>
+      <b>Dive Deeper. Grow Stronger. ⚓</b>
+      </p>
+      <p>
+        #DiesNatalisIX<br>
+        #DiveDeeperGrowStronger<br>
+        #HIMTIKA2026<br>
+        #BersamaKitaJaya<br>
+        #KabinetSelaras
+      </p>
+    `,
+    image: "./assets/images/events/bg-sosialisasi-diesnat.webp",
+    link: "https://www.instagram.com/diesnatalis.himtika/",
+    featured: true
+  },
+  {
+    id: "evt-010",
+    title: "Pendaftaran Lomba Dies Natalis HIMTIKA IX",
+    start: "2026-08-24T07:00:00",
+    end: "2026-08-31T23:59:00",
+    timeLabel: "selesai",
+    category: "himtika",
+    organizer: "HIMTIKA Unsika",
+    location: "Google Form",
+    description: "",
+    dialogContent: `
+      <h3><strong>🏆[OPEN REGISTRATION DIES NATALIS HIMTIKA IX CHAMPIONSHIP] 🌊</strong></h3><br>
+
+      <p>Halo, Future Sailors! ⚓🌊</p>
+
+      <p>Saatnya tunjukkan taji dan ukir prestasi di panggung <b>DIES NATALIS HIMTIKA IX CHAMPIONSHIP! 🥳🏆 </b></p>
+
+      <p>
+      Apakah kamu dan timmu yang siap menjadi juara, melibas semua lawan, dan menguasai arena? Jangan cuma jadi penonton, tunjukkan kemampuan terbaikmu sekarang! 🔥
+      </p>
+
+      <p><strong>
+      <span>🎮 Mobile Legends 💰 HTM: Rp50.000 / Tim</span><br>
+      <span>⚽ PES PlayStation 💰 HTM: Rp15.000 / Player</span><br>
+      <span>🎤 Vocal Music 💰 HTM: Free / Gratis</span>
+      </strong></p>
+      
+      <p><strong>
+      <span>📖 Guidebook: <br>(<a href="https://canva.link/su6vetss7tf06xn">https://canva.link/su6vetss7tf06xn</a>)</span><br><br>
+      <span>📝 Form Pendaftaran: <br>(<a href="https://bit.ly/PendaftaranDiesNatalisIXChampionship">https://bit.ly/PendaftaranDiesNatalisIXChampionship</a>)</span><br>
+      </strong></p>
+      
+      <span>📲 Contact Person:<br>
+      <ul>
+      <li>MLBB: Wisnu <br>(<a href="https://wa.me/qr/S4PCW4F4AWKMG1">https://wa.me/qr/S4PCW4F4AWKMG1</a>)</li>
+      <li>PES: Fazran <br>(<a href="https://wa.me/qr/WZOTCOLFRUCVF1">https://wa.me/qr/WZOTCOLFRUCVF1</a>)</li>
+      <li>Vocal Music: Kayla <br>(<a href="https://wa.me/6285779321250">https://wa.me/6285779321250</a>)</li>
+      </ul>
+
+      <p>
+      Tunggu apa lagi? Ambil kemudi, daftar sekarang, dan jadilah bagian dari sejarah kemenangan tahun ini! ⚓🏆
+      </p>
+      <p>
+      <b>Dive Deeper. Grow Stronger. ⚓</b>
+      </p>
+      <p>
+      📱 Ikuti informasi terbaru di Instagram:<br>
+      <span><a href="https://www.instagram.com/himtika_unsika/">@himtika_unsika</a></span><br>
+      <span><a href="https://www.instagram.com/diesnatalis.himtika/">@diesnatalis.himtika</a></span>
+      </p>
+      <p>
+        #DiesNatalisIX<br>
+        #DiveDeeperGrowStronger<br>
+        #HIMTIKA2026<br>
+        #BersamaKitaJaya<br>
+        #KabinetSelaras
+      </p>
+    `,
+    image: "./assets/images/events/bg-pendaftaran-lomba-diesnat.webp",
+    link: "https://www.instagram.com/diesnatalis.himtika/",
+    featured: true
+  },
+  {
+    id: "evt-011",
     title: "Pelaksanaan Kelas Study Club",
     start: "2026-08-15T07:00:00",
     end: "2026-08-15T23:59:00",
@@ -435,22 +555,76 @@ const calendarEvents = Object.freeze([
     featured: true
   },
   {
-    id: "evt-010",
+    id: "evt-012",
     title: "LKMM-PD",
     start: "2026-08-26T06:00:00",
-    end: "2026-08-26T16:00:00",
+    end: "2026-08-26T17:00:00",
     timeLabel: "",
     category: "himtika",
     organizer: "HIMTIKA Unsika",
     location: "Aula Syekh Quro Unsika",
     description: "Latihan Kepemimpinan dan Manajemen Mahasiswa untuk mahasiswa baru Informatika 2026",
+    dialogContent: `
+      <h3><strong>[LKMM PRA-DASAR 2026]</strong></h3><br>
+
+      <p>🚨 HARI YANG DINANTIKAN AKHIRNYA TIBA! 🚨</p>
+
+      <p>Halo, Calon Pemimpin Muda Informatika! 🤩👋🏻</p>
+
+      <p>
+      Setelah melewati berbagai persiapan, akhirnya hari ini kita akan memulai perjalanan bersama di LKMM PRA-DASAR 2026! 🔥
+      </p>
+
+      <p>
+      Sudah siap untuk belajar, berkembang, berproses, dan menciptakan pengalaman baru bersama? 🚀✨
+      </p>
+
+      <p><strong>
+      <span>🗓️ Rabu, 26 Agustus 2026</span><br>
+      <span>⏰ 06.00 WIB – selesai</span><br>
+      <span>📍 Aula Syekh Quro, Universitas Singaperbangsa Karawang</span>
+      </strong></p>
+
+      <span><strong>⚠️ NOTES:</strong></span><br>
+      <ol>
+      <li>Mahasiswa baru <strong>diperbolehkan membawa motor</strong> ke lingkungan kampus. Namun, segala bentuk kehilangan atau kerusakan kendaraan <strong>bukan tanggung jawab Panitia LKMMPD 2026</strong>.</li>
+      <li>Jangan membawa barang-barang yang dilarang seperti <strong>vape, rokok, parfum, senjata tajam, dan barang terlarang lainnya</strong>.<br>📖 Info lengkap bisa cek di Link Guidebook: <a href="https://bit.ly/GuidebookLKMMPD2026">https://bit.ly/GuidebookLKMMPD2026</a></li>
+      </ol>
+
+      <p>
+      Datang dengan semangat terbaik kalian, karena hari ini bukan sekadar tentang mengikuti kegiatan, tapi tentang memulai sebuah proses baru sebagai bagian dari keluarga besar Informatika. 💙
+      </p>
+      <p>
+      See you, calon pemimpin muda Informatika! 🔥<br><b>Embrace the Process, Create the Impact!</b>
+      </p>
+      <p>
+        #LKMMPD2026<br>
+        #HIMTIKA<br>
+        #BersamaKitaJaya<br>
+        #KabinetSelaras
+      </p>
+    `,
+    image: "./assets/images/events/bg-lkmmpd.webp",
+    link: "https://www.instagram.com/himtika_unsika/",
+    featured: true
+  },
+  {
+    id: "evt-013",
+    title: "Sosialisasi IT Bootcamp 2026",
+    start: "2026-09-14T19:00:00",
+    end: "2026-09-14T23:59:00",
+    timeLabel: "selesai",
+    category: "himtika",
+    organizer: "HIMTIKA Unsika",
+    location: "Zoom Meeting",
+    description: "Sosialisasi IT Bootcamp 2026",
     dialogContent: ``,
     image: "",
     link: "https://www.instagram.com/himtika_unsika/",
     featured: true
   },
   {
-    id: "evt-011",
+    id: "evt-014",
     title: "LKMM X Inaugurasi",
     start: "2026-09-19T06:00:00",
     end: "2026-09-20T23:59:00",
@@ -461,11 +635,11 @@ const calendarEvents = Object.freeze([
     description: "Program pembinaan dan pengenalan mahasiswa baru Fasilkom Unsika angkatan 2026 yang bertujuan membekali pengetahuan, keterampilan, dan sikap dalam manajemen organisasi sekaligus menumbuhkan rasa kekeluargaan, kebersamaan, dan keakraban antar mahasiswa dalam lingkungan Fasilkom.",
     dialogContent: ``,
     image: "",
-    link: "https://www.instagram.com/bemfasilkomunsika/",
+    link: "https://www.instagram.com/lkmminaufasilkom/",
     featured: true
   },
   {
-    id: "evt-012",
+    id: "evt-015",
     title: "IT Bootcamp",
     start: "2026-10-03T06:00:00",
     end: "2026-10-04T23:59:00",
@@ -499,7 +673,22 @@ const calendarEvents = Object.freeze([
     featured: true
   },
   {
-    id: "evt-013",
+    id: "evt-016",
+    title: "Legislative School",
+    start: "2026-10-10T06:00:00",
+    end: "2026-10-10T23:59:00",
+    timeLabel: "selesai",
+    category: "blm",
+    organizer: "BLM Fasilkom Unsika",
+    location: "Coming soon",
+    description: "Legislative School adalah kegiatan seperti seminar/talkshow perihal ranah legislatif dimana akan mengundang narasumber yang ahli dibidangnya seperti anggota DPR/DPRD serta akan ada simulasi persidangan di akhir kegiatan.",
+    dialogContent: ``,
+    image: "",
+    link: "https://www.instagram.com/ls.fasilkomunsika/",
+    featured: true
+  },
+  {
+    id: "evt-017",
     title: "Dies Natalis HIMTIKA IX",
     start: "2026-10-18T08:00:00",
     end: "2026-10-18T23:59:00",
@@ -514,7 +703,7 @@ const calendarEvents = Object.freeze([
     featured: true
   },
   {
-    id: "evt-014",
+    id: "evt-018",
     title: "Penutupan Pelaksanaan Study Club",
     start: "2026-10-25T08:00:00",
     end: "2026-10-25T23:59:00",
