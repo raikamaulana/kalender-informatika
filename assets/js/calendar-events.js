@@ -50,7 +50,6 @@ const categoryConfig = Object.freeze({
 
 const calendarEvents = Object.freeze([
   {
-    id: "evt-001",
     title: "Pekan IT: Semantik",
     start: "2026-05-13T08:00:00",
     end: "2026-05-13T12:00:00",
@@ -65,7 +64,6 @@ const calendarEvents = Object.freeze([
     featured: true
   },
   {
-    id: "evt-002",
     title: "Hi-Link: HE (HIMTIKA Exchange)",
     start: "2026-05-16T07:00:00",
     end: "2026-05-16T20:00:00",
@@ -80,7 +78,6 @@ const calendarEvents = Object.freeze([
     featured: true
   },
   {
-    id: "evt-003",
     title: "Hi-Link: HGTC (HIMTIKA Goes To Company)",
     start: "2026-07-03T06:00:00",
     end: "2026-07-03T20:30:00",
@@ -130,7 +127,6 @@ const calendarEvents = Object.freeze([
     featured: true
   },
   {
-    id: "evt-004",
     title: "Seminar Nasional Pekan IT",
     start: "2026-08-09T08:00:00",
     end: "2026-08-09T14:00:00",
@@ -226,7 +222,6 @@ const calendarEvents = Object.freeze([
     featured: true
   },
   {
-    id: "evt-005",
     title: "CnC: Demonstrasi Project",
     start: "2026-08-09T13:00:00",
     end: "2026-08-09T14:00:00",
@@ -241,7 +236,6 @@ const calendarEvents = Object.freeze([
     featured: false
   },
   {
-    id: "evt-006",
     title: "Pre-order PDH Anggota HIMTIKA",
     start: "2026-08-09T00:00:01",
     end: "2026-08-15T23:59:59",
@@ -310,7 +304,6 @@ const calendarEvents = Object.freeze([
     featured: true
   },
   {
-    id: "evt-007",
     title: "Sosialisasi LKMM Pra-Dasar 2026",
     start: "2026-08-13T19:00:00",
     end: "2026-08-13T23:59:00",
@@ -366,7 +359,6 @@ const calendarEvents = Object.freeze([
     featured: true
   },
   {
-    id: "evt-008",
     title: "Keputrian X Kenali",
     start: "2026-08-14T15:00:00",
     end: "2026-08-14T23:59:00",
@@ -420,7 +412,6 @@ const calendarEvents = Object.freeze([
     featured: true
   },
   {
-    id: "evt-009",
     title: "Sosialisasi Dies Natalis HIMTIKA IX Championship",
     start: "2026-08-24T19:00:00",
     end: "2026-08-24T23:59:00",
@@ -478,7 +469,6 @@ const calendarEvents = Object.freeze([
     featured: true
   },
   {
-    id: "evt-010",
     title: "Pendaftaran Lomba Dies Natalis HIMTIKA IX",
     start: "2026-08-24T07:00:00",
     end: "2026-08-31T23:59:00",
@@ -540,7 +530,6 @@ const calendarEvents = Object.freeze([
     featured: true
   },
   {
-    id: "evt-011",
     title: "Pelaksanaan Kelas Study Club",
     start: "2026-08-15T07:00:00",
     end: "2026-08-15T23:59:00",
@@ -555,7 +544,6 @@ const calendarEvents = Object.freeze([
     featured: true
   },
   {
-    id: "evt-012",
     title: "LKMM-PD",
     start: "2026-08-26T06:00:00",
     end: "2026-08-26T17:00:00",
@@ -609,22 +597,161 @@ const calendarEvents = Object.freeze([
     featured: true
   },
   {
-    id: "evt-013",
+    title: "Pre-Order Danusan Dies Natalis HIMTIKA IX X Pekan IT 2026 Batch 3",
+    start: "2026-09-13T06:00:00",
+    end: "2026-09-17T23:59:00",
+    timeLabel: "selesai",
+    category: "himtika",
+    organizer: "HIMTIKA Unsika",
+    location: "Google Form",
+    description: "Danusan Dies Natalis x Pekan IT Batch 3",
+    dialogContent: `
+
+      <h3><strong>🔥 [PRE-ORDER DANUSAN DIES NATALIS HIMTIKA IX X PEKAN IT 2026 #BATCH 3] 🍪🥟✨</strong></h3><br>
+
+      <span>🔥 Hallo Fasilkomers! 👋</span><br>
+      <p>
+        Lagi laper pas nunggu jam kuliah, atau butuh manis-manis & gurih buat nambah semangat pas nugas? 😋
+      </p>
+
+      <p>
+        Pas banget! <strong>Danusan Dies Natalis HIMTIKA IX X Pekan IT 2026</strong> kembali hadir membawa aneka snack kekinian yang wajib kamu cobain! 🚀
+      </p>
+
+      <span><strong>🍽️ Pilihan Menu Favorit:</strong></span><br>
+      <ol>
+        <li>
+          Aneka Risol (Mayo & Ayam Suir) — Pack/Satuan (Mentah & Matang) <strong>(Start 3K)</strong>
+        </li>
+        <li>
+          Aneka Mochi (6 Pilihan Varian Rasa) — <strong>Rp8.000 / pcs</strong>
+        </li>
+        <li>
+          Aneka Soft Cookies (8 Pilihan Varian Rasa) — <strong>Start Rp8.000</strong>
+        </li>
+        <li>
+          Kulitiq (Basreng Balado Daun Jeruk, Nori Ori, Nori Spicy) — <strong>Start Rp10.000</strong>
+        </li>
+        <li>
+          Dubai Chewy Cookies — <strong>Rp25.000</strong>
+        </li>
+      </ol>
+
+      <span><strong>📌 INFORMASI PO & COD:</strong></span><br>
+      <p>
+        <span>📅 Periode PO: 13 – 17 September 2026</span><br>
+        <span>🚚 Pengambilan (COD): Kamis, 17 September 2026</span><br>
+        <span>📍 Lokasi COD: Depan Gedung Fasilkom</span><br>
+        <span>⏰ Jam Operasional: 10.00 – 15.00 WIB</span><br>
+      </p>
+      
+      <p><strong>💳 Metode Pembayaran:</strong> QRIS</p>
+      
+      <span>📲 <strong>Cara Pemesanan:</strong></span><br>
+      <ol>
+        <li>Scan QR Code pada pamflet atau klik link G-Form di bawah.</li>
+        <li>Pilih menu dan varian favoritmu.</li>
+        <li>Wajib tulis ulang detail pesanan & jumlahnya di kolom yang tersedia.</li>
+        <li>Upload bukti pembayaran QRIS lalu Submit!</li>
+      </ol>
+
+      <p>
+        Ambil pesananmu di titik COD Depan Gedung Fasilkom pada hari Senin! 😉
+      </p>
+
+      <p>
+        🔗 <strong>Link Pemesanan:</strong><br>
+        <a href="https://bit.ly/Danusan-DiesNatHimtikaIX-Kulitiq">
+          https://bit.ly/Danusan-DiesNatHimtikaIX-Kulitiq
+        </a>
+      </p>
+
+      <p>
+        📞 <strong>Contact Person (CP):</strong><br>
+        📱 <a href="https://wa.me/6282319260867">https://wa.me/6282319260867</a> (Ajay)<br>
+        📱 <a href="https://wa.me/6283877797489">https://wa.me/6283877797489</a> (Azhar)
+      </p>
+
+      <p>
+        KUY ORDER SEKARANG! 😋
+      </p>
+
+      <p>
+        Jangan lupa ajak temen sekelas, temen kosan, atau pasangan biar bisa jajan bareng! 🙌
+      </p>
+
+      <p>
+        #DiesNatalisIX<br>
+        #PekanIT2026<br>
+        #DanusanPekanITxDiesNatalis<br>
+        #HIMTIKA2026<br>
+        #BersamaKitaJaya<br>
+        #KabinetSelaras<br>
+        #FasilkomUnsika
+      </p>
+    `,
+    image: "./assets/images/events/bg-danusan-diesnat-pekan-it-batch-3.webp",
+    link: "https://www.instagram.com/himtika_unsika/",
+    featured: true
+  },
+  {
     title: "Sosialisasi IT Bootcamp 2026",
-    start: "2026-09-14T19:00:00",
+    start: "2026-09-14T19:30:00",
     end: "2026-09-14T23:59:00",
     timeLabel: "selesai",
     category: "himtika",
     organizer: "HIMTIKA Unsika",
     location: "Zoom Meeting",
     description: "Sosialisasi IT Bootcamp 2026",
-    dialogContent: ``,
-    image: "",
+    dialogContent: `
+      <h3><strong>[𝐒𝐎𝐒𝐈𝐀𝐋𝐈𝐒𝐀𝐒𝐈 𝐈𝐓 𝐁𝐎𝐎𝐓𝐂𝐀𝐌𝐏: 𝐈𝐍𝐃𝐄𝐏𝐄𝐍𝐃𝐄𝐍𝐓 𝐏𝐑𝐎𝐉𝐄𝐂𝐓]</strong></h3><br>
+
+      <p>Halo Informatics 2026! 👋🏻 </p>
+
+      <p>
+      Ada informasi penting buat kalian! Dalam rangka mempersiapkan pelaksanaan IT BOOTCAMP: INDEPENDENT PROJECT 2026, akan dilaksanakan kegiatan sosialisasi yang wajib diikuti oleh seluruh Mahasiswa Baru Informatika 2026.
+      </p>
+
+      <span>Adapun kegiatan tersebut akan dilaksanakan pada:</span><br>
+      <p><strong>
+      <span>🗓️ 𝐇𝐚𝐫𝐢, 𝐭𝐚𝐧𝐠𝐠𝐚𝐥: 𝐒𝐞𝐧𝐢𝐧, 𝟏𝟒 𝐒𝐞𝐩𝐭𝐞𝐦𝐛𝐞𝐫 𝟐𝟎𝟐𝟔</span><br>
+      <span>🕰️ 𝐖𝐚𝐤𝐭𝐮: 𝟏𝟗.𝟑𝟎 𝐖𝐈𝐁 - 𝐒𝐞𝐥𝐞𝐬𝐚𝐢</span><br>
+      <span>👔 𝐃𝐫𝐞𝐬𝐬 𝐜𝐨𝐝𝐞: 𝐁𝐞𝐛𝐚𝐬 𝐒𝐨𝐩𝐚𝐧</span><br>
+      <span>📍 𝐓𝐞𝐦𝐩𝐚𝐭: 𝐙𝐨𝐨𝐦 𝐌𝐞𝐞𝐭𝐢𝐧𝐠</span>
+      </strong></p>
+
+      <p>
+      <span><strong>🔗 𝐋𝐢𝐧𝐤:</strong><br>(<a href="https://us06web.zoom.us/j/86587929746?pwd=bG15F8ax6wZFo6qvxfjuApwMKPL4WC.1">https://us06web.zoom.us/j/86587929746?pwd=bG15F8ax6wZFo6qvxfjuApwMKPL4WC.1</a>)</span><br><br>
+      <span><strong>𝐕𝐢𝐫𝐭𝐮𝐚𝐥 𝐁𝐚𝐜𝐤𝐠𝐫𝐨𝐮𝐧𝐝:</strong><br>(<a href="https://bit.ly/VIRTUALBACKGROUNDSOSIALISASI">https://bit.ly/VIRTUALBACKGROUNDSOSIALISASI</a>)</span><br>
+      </p>
+      
+      <p>
+      Siapkan diri kalian dan jangan lupa catat tanggalnya! 🤩 
+      </p>
+
+      <span><strong>📱 𝐌𝐨𝐫𝐞 𝐈𝐧𝐟𝐨𝐫𝐦𝐚𝐭𝐢𝐨𝐧:</strong><br>
+      <p>
+      <span>📞 <a href="https://wa.me/6281514154348">https://wa.me/6281514154348</a> (Aditya Akwinda)</span><br>
+      <span>📞 <a href="https://wa.me/6281586278049">https://wa.me/6281586278049</a> (Muhammad Zahwan Andika)</span><br>
+      </p>
+
+      <p>
+      <span>Salam hangat,</span><br>
+      Panitia Pelaksana IT Bootcamp: Independent Project 2026
+      </p>
+      <p>
+        #ITBootcamp2026<br>
+        #HIMTIKA2026<br>
+        #KabinetSelaras<br>
+        #BersamaKitaJaya<br>
+        #FasilkomUnsika
+      </p>
+    `,
+    image: "./assets/images/events/bg-sosialisasi-itb.webp",
     link: "https://www.instagram.com/himtika_unsika/",
     featured: true
   },
   {
-    id: "evt-014",
     title: "LKMM X Inaugurasi",
     start: "2026-09-19T06:00:00",
     end: "2026-09-20T23:59:00",
@@ -639,7 +766,6 @@ const calendarEvents = Object.freeze([
     featured: true
   },
   {
-    id: "evt-015",
     title: "IT Bootcamp",
     start: "2026-10-03T06:00:00",
     end: "2026-10-04T23:59:00",
@@ -673,7 +799,6 @@ const calendarEvents = Object.freeze([
     featured: true
   },
   {
-    id: "evt-016",
     title: "Legislative School",
     start: "2026-10-10T06:00:00",
     end: "2026-10-10T23:59:00",
@@ -688,7 +813,6 @@ const calendarEvents = Object.freeze([
     featured: true
   },
   {
-    id: "evt-017",
     title: "Dies Natalis HIMTIKA IX",
     start: "2026-10-18T08:00:00",
     end: "2026-10-18T23:59:00",
@@ -703,7 +827,6 @@ const calendarEvents = Object.freeze([
     featured: true
   },
   {
-    id: "evt-018",
     title: "Penutupan Pelaksanaan Study Club",
     start: "2026-10-25T08:00:00",
     end: "2026-10-25T23:59:00",
@@ -717,4 +840,6 @@ const calendarEvents = Object.freeze([
     link: "https://www.instagram.com/studyclub_id/",
     featured: true
   }
-]);
+].map((event, index) => ({
+  id: `evt-${String(index + 1).padStart(3, "0")}`, ...event
+})));
