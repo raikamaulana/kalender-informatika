@@ -1088,6 +1088,69 @@ const calendarEvents = Object.freeze([
     featured: true
   },
   {
+    title: "Kelas Offline Study Club",
+    start: "2026-10-16T09:00:00",
+    end: "2026-10-16T23:59:00",
+    timeLabel: "selesai",
+    category: "himtika",
+    organizer: "HIMTIKA Unsika",
+    location: "Gedung Fasilkom, Lantai 4",
+    description: "Wadah belajar bareng, berdiskusi, dan saling bertukar cerita seputar dunia perkuliahan secara santai dan interaktif yang diselenggarakan Study Club HIMTIKA!",
+    dialogContent: `
+      <h3><strong>​🚀✨ [FIRST OFFLINE MEETING STUDY CLUB HIMTIKA 2026] ✨🚀</strong></h3><br>
+
+      <p>​Halo, Star-Seekers dan Sobat Informatics! 👋🏻🌟</p>
+      <p>
+        Akhirnya, momen yang ditunggu-tunggu tiba juga! 🚀🔥
+      </p>
+      <p>
+        Setelah sebelumnya kita bertemu secara online, sekarang saatnya kita berkumpul secara langsung dalam pertemuan offline pertama Study Club HIMTIKA 2026! 🎉
+      </p>
+      <p>
+        Dengan semangat “Upgrade Your Skills, Unlock Your Potential”, inilah waktunya buat kita mulai perjalanan belajar, eksplorasi, dan berkembang bersama di bidang teknologi! 💻✨
+      </p>
+      
+      <span><strong>📍 SAVE THE DATE!</strong></span><br>
+      <p>
+      <span><strong>​📅 Hari/Tanggal: Jumat, 16 Oktober 2026</strong></span><br>
+      <span><strong>⏰ Jam: 09.00 WIB – selesai</strong></span><br>
+      <span><strong>📍 Tempat: Gedung Fasilkom, Lantai 4</strong></span>
+      </p>
+      
+      <p>
+        <span>Tahun ini, ada tiga kelas seru yang siap menemani perjalanan kalian:</span><br>
+        <ul>
+          <li>Web Development bersama <strong>Aldi Wijaya</strong></li>
+          <li>Data Science bersama <strong>Kintan Diyah A.</strong></li>
+          <li>UI/UX Design bersama <strong>Brandon Haniif L.</strong></li>
+        </ul>
+      </p>
+
+      <p>
+        Jadi, gimana nih, Star-Seekers? Udah siap buat belajar bareng, menambah pengalaman, dan mengembangkan skill bersama? 👀🔥
+      </p>
+      <p>
+        Jangan lupa hadir tepat waktu, siapkan semangat terbaik kalian, dan manfaatkan kesempatan ini untuk saling mengenal serta bertumbuh bersama! 🌌🚀
+      </p>
+      <p>
+        See you in the class, Star-Seekers! 💫
+      </p>
+      <p>
+        ✨ “Upgrade Your Skills, Unlock Your Potential” ✨
+      </p>
+      <p>
+        #StudyClub2026<br>
+        #HIMTIKA2026<br>
+        #BersamaKitaJaya<br>
+        #KabinetSelaras<br>
+        #FasilkomUnsika
+      </p>
+    `,
+    image: "./assets/images/events/bg-kelas-offline-study-club.webp",
+    link: "https://www.instagram.com/studyclub_id/",
+    featured: true
+  },
+  {
     title: "Malam Puncak Dies Natalis HIMTIKA IX",
     start: "2026-10-17T17:00:00",
     end: "2026-10-17T23:59:00",
@@ -1377,20 +1440,6 @@ const calendarEvents = Object.freeze([
     `,
     image: "./assets/images/events/bg-open-regist-webinar-diesnat.webp",
     link: "https://www.instagram.com/diesnatalis.himtika/",
-    featured: true
-  },
-  {
-    title: "Penutupan Pelaksanaan Study Club",
-    start: "2026-10-25T08:00:00",
-    end: "2026-10-25T23:59:00",
-    timeLabel: "selesai",
-    category: "himtika",
-    organizer: "HIMTIKA Unsika",
-    location: "Coming soon",
-    description: "Kelas Terakhir sekaligus penutupan dari kegiatan Study Club HIMTIKA.",
-    dialogContent: ``,
-    image: "",
-    link: "https://www.instagram.com/studyclub_id/",
     featured: true
   },
   {
